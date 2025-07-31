@@ -494,7 +494,8 @@
             border-radius: 50%;
             position: absolute;
             left: 50%;
-            transform: translateX(-50%);
+            top: 50%;
+            transform: translate(-50%, -50%);
             z-index: 10;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -527,7 +528,7 @@
         }
 
         .timeline-dot:hover {
-            transform: translateX(-50%) scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2);
             transform-origin: center;
             background: #ffffff;
             border-color: #ffffff;
@@ -546,7 +547,6 @@
                 0 0 15px rgba(255, 255, 255, 0.4),
                 inset 0 1px 2px rgba(255, 255, 255, 0.8);
             border-color: rgba(255, 255, 255, 0.9);
-            position: relative;
             overflow: hidden;
         }
 
@@ -583,10 +583,10 @@
 
         @keyframes dotPulsate {
             0%, 100% { 
-                transform: translateX(-50%) scale(1);
+                transform: translate(-50%, -50%) scale(1);
             }
             50% { 
-                transform: translateX(-50%) scale(1.05);
+                transform: translate(-50%, -50%) scale(1.05);
             }
         }
 
@@ -807,6 +807,23 @@
             animation: yearOrbit 15s ease-in-out infinite;
         }
 
+        .project-year-mobile {
+            color: #999999;
+            font-weight: 300;
+            font-size: 0.8rem;
+            margin-top: 6px;
+            margin-bottom: 8px;
+            margin-left: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            text-transform: none;
+            letter-spacing: 0.5px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            width: fit-content;
+        }
+
         .timeline-item:nth-child(odd) .project-year {
             left: calc(50% + 20px);
         }
@@ -970,20 +987,7 @@
             }
             
             .project-year {
-                position: static !important;
-                transform: none !important;
-                left: auto !important;
-                right: auto !important;
-                display: inline-block;
-                margin-top: 4px;
-                margin-bottom: 0;
-                margin-left: 8px;
-                font-size: 0.7rem;
-                background: rgba(255, 255, 255, 0.1);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                padding: 2px 6px;
-                border-radius: 8px;
-                vertical-align: middle;
+                display: none;
             }
             
             h1 {
@@ -1085,6 +1089,15 @@
                 
                 // Assemble card
                 card.appendChild(title);
+                
+                // Add mobile year only on mobile devices
+                if (window.innerWidth <= 768) {
+                    const mobileYear = document.createElement('div');
+                    mobileYear.className = 'project-year-mobile';
+                    mobileYear.textContent = project.yearRange || project.year;
+                    card.appendChild(mobileYear);
+                }
+                
                 card.appendChild(type);
                 card.appendChild(summary);
                 if (project.links) {
