@@ -73,7 +73,7 @@
             max-width: 800px;
             margin: 30px auto;
             padding: 40px 0;
-            min-height: 2000px;
+            min-height: 2200px;
         }
 
         .timeline::before {
@@ -89,12 +89,12 @@
             box-shadow: 
                 0 0 10px #00ff41,
                 inset 0 0 10px rgba(0, 255, 65, 0.5);
-            animation: pulse-timeline 3s ease-in-out infinite alternate;
+            animation: pulse-timeline 8s ease-in-out infinite alternate;
         }
 
         @keyframes pulse-timeline {
             0% { box-shadow: 0 0 10px #00ff41, inset 0 0 10px rgba(0, 255, 65, 0.5); }
-            100% { box-shadow: 0 0 20px #00ff41, inset 0 0 20px rgba(0, 255, 65, 0.8); }
+            100% { box-shadow: 0 0 12px #00ff41, inset 0 0 12px rgba(0, 255, 65, 0.6); }
         }
 
         .timeline-item {
@@ -112,22 +112,34 @@
             flex-direction: row-reverse;
         }
 
-        /* Year-based positioning */
-        .timeline-item[data-year="2024"] { top: 0px; }
-        .timeline-item[data-year="2023"] { top: 120px; }
-        .timeline-item[data-year="2022"] { top: 240px; }
-        .timeline-item[data-year="2021"] { top: 360px; }
-        .timeline-item[data-year="2020"] { top: 480px; }
-        .timeline-item[data-year="2019"] { top: 600px; }
-        .timeline-item[data-year="2018"] { top: 720px; }
-        .timeline-item[data-year="2016"] { top: 840px; }
-        .timeline-item[data-year="2015"] { top: 960px; }
-        .timeline-item[data-year="2014"] { top: 1080px; }
-        .timeline-item[data-year="2013"] { top: 1200px; }
-        .timeline-item[data-year="2011"] { top: 1320px; }
-        .timeline-item[data-year="2010"] { top: 1440px; }
-        .timeline-item[data-year="2007"] { top: 1560px; }
-        .timeline-item[data-year="2005"] { top: 1680px; }
+        /* Individual project positioning */
+        .timeline-item:nth-child(1) { top: 0px; }
+        .timeline-item:nth-child(2) { top: 80px; }
+        .timeline-item:nth-child(3) { top: 160px; }
+        .timeline-item:nth-child(4) { top: 240px; }
+        .timeline-item:nth-child(5) { top: 320px; }
+        .timeline-item:nth-child(6) { top: 400px; }
+        .timeline-item:nth-child(7) { top: 480px; }
+        .timeline-item:nth-child(8) { top: 560px; }
+        .timeline-item:nth-child(9) { top: 640px; }
+        .timeline-item:nth-child(10) { top: 720px; }
+        .timeline-item:nth-child(11) { top: 800px; }
+        .timeline-item:nth-child(12) { top: 880px; }
+        .timeline-item:nth-child(13) { top: 960px; }
+        .timeline-item:nth-child(14) { top: 1040px; }
+        .timeline-item:nth-child(15) { top: 1120px; }
+        .timeline-item:nth-child(16) { top: 1200px; }
+        .timeline-item:nth-child(17) { top: 1280px; }
+        .timeline-item:nth-child(18) { top: 1360px; }
+        .timeline-item:nth-child(19) { top: 1440px; }
+        .timeline-item:nth-child(20) { top: 1520px; }
+        .timeline-item:nth-child(21) { top: 1600px; }
+        .timeline-item:nth-child(22) { top: 1680px; }
+        .timeline-item:nth-child(23) { top: 1760px; }
+        .timeline-item:nth-child(24) { top: 1840px; }
+        .timeline-item:nth-child(25) { top: 1920px; }
+        .timeline-item:nth-child(26) { top: 2000px; }
+        .timeline-item:nth-child(27) { top: 2080px; }
 
         .timeline-dot {
             width: 16px;
@@ -140,7 +152,7 @@
             transform: translateX(-50%);
             z-index: 10;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.6s ease;
             box-shadow: 
                 0 0 15px #00ff41,
                 inset 0 0 10px rgba(0, 255, 65, 0.3);
@@ -176,7 +188,7 @@
         }
 
         .timeline-dot:hover {
-            transform: translateX(-50%) scale(2);
+            transform: translateX(-50%) scale(1.4);
             border-color: #ff0080;
             box-shadow: 
                 0 0 30px #ff0080,
@@ -192,7 +204,7 @@
             background: linear-gradient(90deg, #00ff41, #00ffff);
             top: 50%;
             z-index: 5;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
         }
 
@@ -242,7 +254,7 @@
         }
 
         .project-card:hover {
-            transform: scale(1.2);
+            transform: scale(1.08);
             transform-origin: center;
             z-index: 100;
             box-shadow: 
@@ -261,12 +273,14 @@
             width: 100%;
             height: 3px;
             background: linear-gradient(90deg, #00ff41, #ff0080, #00ffff, #ff0080, #00ff41);
-            animation: scan 2s linear infinite;
+            animation: scan 12s linear infinite;
         }
 
         @keyframes scan {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% { transform: translateX(-100%); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateX(100%); opacity: 0; }
         }
 
         .project-title {
@@ -278,31 +292,45 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             text-shadow: 0 0 5px #00ff41;
+            font-family: 'Courier New', monospace;
+            position: relative;
         }
 
         .project-type {
-            display: none;
-        }
-
-        .project-card:hover .project-type {
-            display: inline-block;
-            background: rgba(0, 255, 65, 0.1);
-            color: #00ffff;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.6rem;
+            display: block;
+            color: #888;
+            padding: 0;
+            border: none;
+            background: none;
+            font-size: 0.65rem;
             margin-bottom: 6px;
-            font-weight: 500;
-            border: 1px solid #00ffff;
-            text-transform: uppercase;
+            font-weight: 400;
+            text-transform: lowercase;
+            letter-spacing: 0.3px;
+            font-style: italic;
         }
 
         .project-year {
-            color: #ff0080;
+            color: #888;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             margin-bottom: 0;
-            text-shadow: 0 0 5px #ff0080;
+            position: absolute;
+            left: calc(50% + 45px);
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            z-index: 15;
+        }
+
+        .timeline-item:nth-child(even) .project-year {
+            left: calc(50% - 100px);
         }
 
         .project-summary {
@@ -340,7 +368,7 @@
             text-decoration: none;
             font-size: 0.8rem;
             margin: 2px 4px 2px 0;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             font-weight: bold;
             text-transform: uppercase;
             border: 1px solid #00ff41;
@@ -349,7 +377,7 @@
         .project-links a:hover {
             background: linear-gradient(135deg, #ff0080, #00ff41);
             box-shadow: 0 0 10px #ff0080;
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         .no-content {
@@ -424,8 +452,7 @@
         </header>
 
         <div class="stats">
-            <h3>35+ Creative Projects</h3>
-            <p>Spanning from 2005 to present</p>
+            <h3>Check out 30ish creative projects, 2005 to present.</h3>
         </div>
 
         <div class="timeline" id="timeline">
@@ -722,6 +749,11 @@
                 const dot = document.createElement('div');
                 dot.className = `timeline-dot ${dotSize}`;
                 
+                // Create project year display on timeline
+                const yearDisplay = document.createElement('div');
+                yearDisplay.className = 'project-year';
+                yearDisplay.textContent = project.yearRange || project.year;
+                
                 // Create project card (no size class needed - auto-sizing)
                 const card = document.createElement('div');
                 card.className = 'project-card';
@@ -732,14 +764,9 @@
                 title.textContent = project.title;
                 
                 // Project type
-                const type = document.createElement('span');
+                const type = document.createElement('div');
                 type.className = 'project-type';
                 type.textContent = project.type;
-                
-                // Project year
-                const year = document.createElement('div');
-                year.className = 'project-year';
-                year.textContent = project.yearRange || project.year;
                 
                 // Project summary
                 const summary = document.createElement('p');
@@ -762,7 +789,6 @@
                 // Assemble card
                 card.appendChild(title);
                 card.appendChild(type);
-                card.appendChild(year);
                 card.appendChild(summary);
                 if (project.links) {
                     card.appendChild(linksContainer);
@@ -770,6 +796,7 @@
                 
                 // Assemble timeline item
                 timelineItem.appendChild(dot);
+                timelineItem.appendChild(yearDisplay);
                 timelineItem.appendChild(card);
                 
                 // Add to timeline
