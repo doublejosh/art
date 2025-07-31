@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .project-type {
+            display: inline-block;
+            background: #ecf0f1;
+            color: #7f8c8d;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .project-year {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .project-summary {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .project-links {
+            margin-top: auto;
+        }
+
+        .project-links a {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            margin: 2px 4px 2px 0;
+            transition: background 0.3s ease;
+        }
+
+        .project-links a:hover {
+            background: #2980b9;
+        }
+
+        .no-content {
+            color: #bdc3c7;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .stats {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .stats h3 {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Art Portfolio</h1>
+            <p class="subtitle">Interactive installations, digital art, and creative technology</p>
+        </header>
+
+        <div class="stats">
+            <h3>35+ Creative Projects</h3>
+            <p>Spanning from 2005 to present</p>
+        </div>
+
+        <div class="grid">
+            <!-- TimeWarp Mechanical Sign -->
+            <div class="project-card">
+                <h2 class="project-title">TimeWarp</h2>
+                <span class="project-type">wooden planetary gears</span>
+                <div class="project-year">2024</div>
+                <p class="project-summary">Signage with universal mechanical gear run by a disco ball motor. Central hub portion shown in video.</p>
+                <div class="project-links">
+                    <a href="https://www.dropbox.com/scl/fi/innzeyvax5uou8i2tni9b/2023-03-15-18.05.39.mov?rlkey=75so34f8poyefp0vxf5wxvdp9&st=q7x7ehof&dl=0">Demo video</a>
+                </div>
+            </div>
+
+            <!-- Whiskey O'Clock -->
+            <div class="project-card">
+                <h2 class="project-title">Whiskey O'Clock</h2>
+                <span class="project-type">giant 7-segment display</span>
+                <div class="project-year">2024–present</div>
+                <p class="project-summary">Giant digital clock with 7-segment displays made from whiskey bottles. The ends of rectangular bottles make up the pieces of this jumbo very-lo-res "screen."</p>
+                <div class="project-links">
+                    <a href="https://www.instagram.com/reel/C2JPbp2xCbY/">Prototype</a>
+                    <a href="https://www.dropbox.com/scl/fi/e0usvywct9gnfwn3p9oga/2024-04-11-19.51.06.mov?rlkey=56707ki9c2csljepkwb06r2f1&st=r7sqivl0&dl=0">Full-scale draft</a>
+                    <a href="#">In-progress</a>
+                </div>
+            </div>
+
+            <!-- POPAGENDA -->
+            <div class="project-card">
+                <h2 class="project-title">POP·AGENDA</h2>
+                <span class="project-type">food truck art car</span>
+                <div class="project-year">2019–present</div>
+                <p class="project-summary">This mini food-truck serves popcorn and functions as a DJ booth. The volunteer employees wear 1950s period costumes (hats, bow ties, and aprons) while giving away snacks. This piece was, and will be, taken to CascadiaNW and SeaCompression.</p>
+                <div class="project-links">
+                    <a href="https://doublejosh.com/post/184371658853/popagenda">Sketches and photos</a>
+                    <a href="https://popagenda.org/">popagenda.org</a>
+                    <a href="https://www.instagram.com/the_pop_agenda/">Instagram</a>
+                </div>
+            </div>
+
+            <!-- City of the Future -->
+            <div class="project-card">
+                <h2 class="project-title">Posters from the Future</h2>
+                <span class="project-type">posters and signage</span>
+                <div class="project-year">2023</div>
+                <p class="project-summary">Part of an immersive walk-through called City of the Future at the Teal Building on Capitol Hill, these posters and lightboxes helped draw guests into the future world of the exhibit. Pieces included advertisements and propaganda from businesses and city government. The work explored classism, utopia/dystopia, and how the future will affect our daily lives.</p>
+                <div class="project-links">
+                    <a href="https://www.instagram.com/p/Cs48Z7Zx4Ez/">Instagram</a>
+                    <a href="https://seattlecityofthefuture.com/">Website</a>
+                </div>
+            </div>
+
+            <!-- Fortune Calibrator -->
+            <div class="project-card">
+                <h2 class="project-title">Fortune Calibrator</h2>
+                <span class="project-type">arcade fortune machine</span>
+                <div class="project-year">2020</div>
+                <p class="project-summary">A custom arcade machine that delivers fortunes based on a few yes/no questions, which costs one quarter. Participants are asked to rate accuracy, and everything is saved to the cloud. A mobile web app allows collecting and rating fortunes by witty collaborators. Adjustments are planned to calibrate the AI and distribute a series of machines to collect data.</p>
+                <div class="project-links">
+                    <a href="https://github.com/doublejosh/FortuneTeller/wiki">GitHub wiki [photos]</a>
+                </div>
+            </div>
+
+            <!-- Final Approach Motel -->
+            <div class="project-card">
+                <h2 class="project-title">Final Approach Motel</h2>
+                <span class="project-type">popup tiny bar</span>
+                <div class="project-year">2018/19, 2024</div>
+                <p class="project-summary">An immersive tiny bar experience of a mid-century, un-scale, hotel lobby. This "roach motel" features morphing wallpaper, resin poured roach wing chandelier, and a stained wooden bar. The staff are dressed as cockroaches of course. This piece will be installed at the Golden Guy Alley (24 tiny bars) at BRC 2019.</p>
+                <div class="project-links">
+                    <a href="https://www.metafaux.com/finalapproachmotel/">Website</a>
+                </div>
+            </div>
+
+            <!-- Upgrade node -->
+            <div class="project-card">
+                <h2 class="project-title">Upgrade node</h2>
+                <span class="project-type">interactive lighting</span>
+                <div class="project-year no-content">Year not specified</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- You're On the Money -->
+            <div class="project-card">
+                <h2 class="project-title">You're On the Money</h2>
+                <span class="project-type">Peep hole reflection engraving</span>
+                <div class="project-year no-content">Year not specified</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Crystal Experiment -->
+            <div class="project-card">
+                <h2 class="project-title">Crystal Experiment</h2>
+                <span class="project-type">arcade machine</span>
+                <div class="project-year no-content">Year not specified</div>
+                <p class="project-summary">Web backend to measure interactions</p>
+            </div>
+
+            <!-- Panels of Futurescape -->
+            <div class="project-card">
+                <h2 class="project-title">Panels of Futurescape</h2>
+                <span class="project-type">Coroplast panel series</span>
+                <div class="project-year no-content">Year not specified</div>
+                <p class="project-summary">Lighting and static</p>
+            </div>
+
+            <!-- Shy Bamboo -->
+            <div class="project-card">
+                <h2 class="project-title">Shy Bamboo</h2>
+                <span class="project-type">interative lighting</span>
+                <div class="project-year no-content">Year not specified</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Light Skirmish -->
+            <div class="project-card">
+                <h2 class="project-title">Light Skirmish</h2>
+                <span class="project-type">large interactive game</span>
+                <div class="project-year">2018</div>
+                <p class="project-summary">Interactive two-player game comprised of a circular array of wifi-controlled multi-color LED stage lights and two large wireless nautical steering wheels. Players face one another across the circle and must spin their wheel… causing lights to illuminate in a series around the loop. The "spinning" lights decrease in speed with the game's goal to stop on the opposing player. This game was built using Wemos Arduino micro-controllers inserted into 24 outdoor 10W/12V LED flood lights, powered by lithium battery packs. Installed at Electric Sky Art Camp and Burien Arts-A-Glow.</p>
+            </div>
+
+            <!-- Color Learning Box -->
+            <div class="project-card">
+                <h2 class="project-title">Color Learning Box</h2>
+                <span class="project-type">interactive toy</span>
+                <div class="project-year">2022</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Puget Sound -->
+            <div class="project-card">
+                <h2 class="project-title">Puget Sound</h2>
+                <span class="project-type">Topography in resin</span>
+                <div class="project-year">2023</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Electric Sheep -->
+            <div class="project-card">
+                <h2 class="project-title">Electric Sheep</h2>
+                <span class="project-type">DJ night posters x18</span>
+                <div class="project-year">2023-2025</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Flower sign -->
+            <div class="project-card">
+                <h2 class="project-title">Flower sign</h2>
+                <span class="project-type">Outdoor field marker</span>
+                <div class="project-year">2023</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Potato Man -->
+            <div class="project-card">
+                <h2 class="project-title">Potato Man</h2>
+                <span class="project-type">Electronic-organic figurine</span>
+                <div class="project-year">2021</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Space Cat Vampire Adventure -->
+            <div class="project-card">
+                <h2 class="project-title">Space Cat Vampire Adventure</h2>
+                <span class="project-type">Board game</span>
+                <div class="project-year">2011-2018</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Doctrine -->
+            <div class="project-card">
+                <h2 class="project-title">Doctrine</h2>
+                <span class="project-type">Board game + stamp pieces</span>
+                <div class="project-year">2018</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Interlocked Earings -->
+            <div class="project-card">
+                <h2 class="project-title">Interlocked Earings</h2>
+                <span class="project-type">jewelery</span>
+                <div class="project-year">2015</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Emmett -->
+            <div class="project-card">
+                <h2 class="project-title">Emmett</h2>
+                <span class="project-type">open-source hover board</span>
+                <div class="project-year">2019</div>
+                <p class="project-summary">This was my effort to create a DIY one-wheel, self-balancing, electric skateboard. As the project progressed it became obvious this should be open-sourced. I was able to achieve decent accelerometer control and dealt with battery management, but got stuck handling the throttles of brushless electric motor controllers. I'd love to reboot this someday.</p>
+                <div class="project-links">
+                    <a href="https://openemmett.tumblr.com/">Blog</a>
+                    <a href="https://github.com/doublejosh/emmett/wiki">Instructions wiki</a>
+                </div>
+            </div>
+
+            <!-- Meteorolumen -->
+            <div class="project-card">
+                <h2 class="project-title">Meteorolumen</h2>
+                <span class="project-type">virtual weather window</span>
+                <div class="project-year">2013</div>
+                <p class="project-summary">Consists of a 2D array of Arduino controlled RGB LEDs which simulates slow flakes falling, rain pouring, and leaves tumbling down. It is presented behind a long vertical vintage (recovered) window. The viewer peers through the glass to watch seasons change as the randomized weather streams by. Now privately owned.</p>
+                <div class="project-links">
+                    <a href="http://www.youtube.com/watch?v=U2_FuWgj0B8">Just snow, just lights</a>
+                    <a href="http://www.youtube.com/watch?v=d0-1pvcFxM8">Single speed flakes</a>
+                    <a href="https://github.com/doublejosh/Frightful_Weather">GitHub</a>
+                    <a href="http://www.mynewsletterbuilder.com/email/newsletter/1411573309">Oscillate 1</a>
+                    <a href="http://dorkbotsea.org/events/oscillate-art-celebrating-light-and-movement">Oscillate 2</a>
+                </div>
+            </div>
+
+            <!-- Night Balloons -->
+            <div class="project-card">
+                <h2 class="project-title">Night Balloons</h2>
+                <span class="project-type">glowing orb array</span>
+                <div class="project-year">2013</div>
+                <p class="project-summary">A string of balloon lanterns, each with a microchipped RGB LED bulb, making them controllable inflatable light bulbs synchronized from an Arduino processor on the ground. The light patterns and simulated motion is done via phone/ethernet cords and connection terminals. This piece has been setup with helium as single vertical chain as well as in a 3D geometric (tetrahedron) array.</p>
+                <div class="project-links">
+                    <a href="http://www.youtube.com/watch?v=B_QpBHy1OX4">Installed #1</a>
+                    <a href="http://www.youtube.com/watch?v=ka-9o_Phb_I">Installed #2</a>
+                    <a href="https://github.com/doublejosh/balloon_arch">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Stormbrella -->
+            <div class="project-card">
+                <h2 class="project-title">Stormbrella</h2>
+                <span class="project-type">rain and lightening umbrella</span>
+                <div class="project-year">2016</div>
+                <p class="project-summary">Provides a mobile stormy light show. A clear umbrella is lined with addressable LEDs on the spines, which display a random rain simulation. Occasionally thunder will strike at random intervals and strength. Care was taken to ensure natural effects. Useful to improve friends finding you.</p>
+                <div class="project-links">
+                    <a href="https://github.com/doublejosh/stormbrella">GitHub code</a>
+                    <a href="https://www.youtube.com/watch?v=DrYusomXhdg">Video</a>
+                </div>
+            </div>
+
+            <!-- Sparkle Shoes -->
+            <div class="project-card">
+                <h2 class="project-title">Sparkle Shoes</h2>
+                <span class="project-type">sensing lit footwear</span>
+                <div class="project-year">2014</div>
+                <p class="project-summary">Set of RGB LED rimmed sneakers with force sensor inputs that control the color as the wearer steps, dances or jumps for joy. The shoes have several light modes which can be cycled through with a "double heel stomp" action. Battery packs and controller is worn on the ankle.</p>
+                <div class="project-links">
+                    <a href="https://www.youtube.com/watch?v=D-02U-SUFkM">Video in rainbow mode</a>
+                    <a href="http://f.cl.ly/items/3f1P363X432z3J3g2307/SparkleShoes.pdf">Hardware diagram (PDF)</a>
+                    <a href="https://www.youtube.com/watch?v=b7zJV3MI86I">Video V3</a>
+                </div>
+            </div>
+
+            <!-- Summer Rain -->
+            <div class="project-card">
+                <h2 class="project-title">Summer Rain</h2>
+                <span class="project-type">smart fountain</span>
+                <div class="project-year">2015</div>
+                <p class="project-summary">A computer controlled graphical fountain that "prints" designs using falling drops of water. Audio input allows participants to interact with the fountain and influence the designs produced. The foundation is large enough for people to stand in an outer basin around the controlled water jets. It is lit for night time displays.</p>
+                <div class="project-links">
+                    <a href="https://www.hackster.io/4712/sound-reactive-fountain-81d461">View on Hackster</a>
+                </div>
+            </div>
+
+            <!-- Rain Cloud -->
+            <div class="project-card">
+                <h2 class="project-title">Rain Cloud</h2>
+                <span class="project-type">dynamic art on a stick</span>
+                <div class="project-year">2014</div>
+                <p class="project-summary">Cartoonish, lit, large rain cloud on the end of an 8 ft. pole held above one's head. LED strands dangling from the cloud emulate random rain drops falling on the person holding the piece. Simple lights make the white cloud visible. The art is useful for being recognized across a crowded event and for sneaking into pictures.</p>
+                <div class="project-links">
+                    <a href="http://mashable.com/2014/08/28/burning-man-night-2014/">Featured in Mashable article</a>
+                    <a href="http://cl.ly/image/3m0o2N2K1N0c/10500259_10203627538361932_3336589148971603505_n.jpg">Photo</a>
+                </div>
+            </div>
+
+            <!-- Lux Stellate -->
+            <div class="project-card">
+                <h2 class="project-title">Lux Stellate</h2>
+                <span class="project-type">geometric chandelier</span>
+                <div class="project-year">2016</div>
+                <p class="project-summary">A glowing star, comprised of two intersecting tetrahedron pyramids, constructed from clear tubes with RGB LEDs inside along each edge. The shape expresses a number of lighting patterns that are beautiful to watch and show off the geometry of the hanging art. It appears as a floating, mystical, 3D hexagram, Merkabah, geometric, alluring chandelier. The scale was 6 feet across.</p>
+                <div class="project-links">
+                    <a href="http://doublejosh.com/post/150948636018/light-star">Read More & Parts list</a>
+                    <a href="http://f.cl.ly/items/28222V0w1W1W2e2T1S07/MEB_20140906_394.jpg">Photo 1</a>
+                    <a href="http://cl.ly/image/041P312y2i3i/140906205535_0487.jpg">Photo 2</a>
+                    <a href="https://flic.kr/p/pmunLk">Photo 3</a>
+                </div>
+            </div>
+
+            <!-- Tacky Smack -->
+            <div class="project-card">
+                <h2 class="project-title">Tacky Smack</h2>
+                <span class="project-type">Vinyl wall art biz</span>
+                <div class="project-year no-content">Year not specified</div>
+                <p class="project-summary no-content">No description available</p>
+            </div>
+
+            <!-- Steve the Robot H.E.Ai.D. -->
+            <div class="project-card">
+                <h2 class="project-title">Steve the Robot H.E.Ai.D.</h2>
+                <span class="project-type">interactive audio experience</span>
+                <div class="project-year">2010</div>
+                <p class="project-summary">A large-scale, interactive, collaborative audio installation in which people moved to control lasers generate music together. Short for Human Energized Artificial Intelligence Device— the project was intended as a new type of instrument played both as an individual and/or within a group. Because sound was created by simple movement the barrier to participation was low, and emergent collaborative exploration often became the focus.</p>
+                <div class="project-links">
+                    <a href="https://www.slideshare.net/slideshow/making-of-steve-the-robot-heaid/3942828">Making of Steve the Robot</a>
+                </div>
+            </div>
+
+            <!-- Radioator -->
+            <div class="project-card">
+                <h2 class="project-title">Radioator</h2>
+                <span class="project-type">mobile broadcast cart</span>
+                <div class="project-year">2007</div>
+                <p class="project-summary">A mobile radio station built on a golf cart chassis that broadcast mobile FM (25mW). It allowed vehicles and people to synchronize nearby; sometimes silently using ear phones (50 provided to guests), as well as synchronizing disparate speaker systems. The cart frame was made to look like a giant 12 foot set of headphones in bright chartreuse using two fold-out hemispheres and a connecting arch tubes.</p>
+            </div>
+
+            <!-- iheartSEA -->
+            <div class="project-card">
+                <h2 class="project-title">iheartSEA</h2>
+                <span class="project-type">local news aggregator</span>
+                <div class="project-year">2005</div>
+                <p class="project-summary">This project was a web platform expressing the unique online voice of different neighborhoods within the Seattle area. As people and businesses voiced their thoughts via their twitter account or blog it would join the stream. (Folks could also create an account directly). At its essence iheartsea.com was a news and chatter aggregator.</p>
+            </div>
+
+            <!-- Anthropornography -->
+            <div class="project-card">
+                <h2 class="project-title">Anthropornography</h2>
+                <span class="project-type">faux cologne brand</span>
+                <div class="project-year">2005</div>
+                <p class="project-summary">A collaboration with an essential scent business owner, it presented a fantastical brand backstory for a custom-made scent. It was an experiment in alternative packaging for an existing product which supposed an ancient grounding in the human sexual response to the cologne. This includes: web presence, brand, cards, retail display, and product packaging.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
