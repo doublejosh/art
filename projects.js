@@ -40,7 +40,7 @@ const projects = [
         title: "Puget Sound",
         type: "Topography in resin",
         year: "2023",
-        summary: "No description available",
+        summary: "Resin and wood sculpture of the Puget Sound topography, including the San Juan Islands and Hood Canal.",
         noContent: true
     },
     {
@@ -49,7 +49,7 @@ const projects = [
         type: "DJ night posters x18",
         year: "2023",
         yearRange: "2023-2025",
-        summary: "No description available",
+        summary: "This monthly DJ night features custom posters with an ongoing narrative about the rise and fall of robotic sheep deployed into a future culture.",
         noContent: true
     },
     {
@@ -57,7 +57,7 @@ const projects = [
         title: "Flower sign",
         type: "Outdoor field marker",
         year: "2023",
-        summary: "No description available",
+        summary: "Wood relief sign made for outdoor flower field to inform visitors of wildflowers.",
         noContent: true
     },
     {
@@ -65,7 +65,7 @@ const projects = [
         title: "Color Learning Box",
         type: "interactive toy",
         year: "2022",
-        summary: "No description available",
+        summary: "Child's toy with lights, buttons, and sounds to teach an infant their colors.",
         noContent: true
     },
     {
@@ -73,7 +73,7 @@ const projects = [
         title: "Potato Man",
         type: "Electronic-organic figurine",
         year: "2021",
-        summary: "No description available",
+        summary: "Action figurine of organic and electronic creature made from potatoes and computer parts.",
         noContent: true
     },
     {
@@ -82,7 +82,7 @@ const projects = [
         type: "arcade fortune machine",
         year: "2020",
         yearRange: "2020–2021",
-        summary: "I wanted to make a classic fortune-telling machine that reveals the existential doom inside every outcome. This machine presents a single outcome in relation to all choices, and makes it clear that even the best fortune is cursed with temporality and entropy.",
+        summary: "Based on a classic fortune-telling machine, this installation presents a fortune based on choices and allows the user to vote on the what they received.",
         links: [
             { text: "More photos and sketches", url: "https://doublejosh.com/post/186006325043/fortune-calibrator" }
         ]
@@ -93,7 +93,7 @@ const projects = [
         type: "food truck art car",
         year: "2019",
         yearRange: "2019–present",
-        summary: "This mini food-truck serves popcorn and functions as a DJ booth. The volunteer employees wear 1950s period costumes (hats, bow ties, and aprons) while giving away snacks. This piece was, and will be, taken to CascadiaNW and SeaCompression.",
+        summary: "This mini food-truck serves snacks and is a mobile DJ booth. The volunteer employees wear 1950s period costumes (hats, bow ties, and aprons) while giving away snacks. This piece has been to numerous PNW outdoor events.",
         links: [
             { text: "Sketches and photos", url: "https://doublejosh.com/post/184371658853/popagenda" },
             { text: "popagenda.org", url: "https://popagenda.org/" },
@@ -123,7 +123,7 @@ const projects = [
         title: "Doctrine",
         type: "Board game + stamp pieces",
         year: "2018",
-        summary: "No description available",
+        summary: "Board game With a theme of cult teachings and outcomes. Players use a set of symbols to acquire members and win.",
         noContent: true
     },
     {
@@ -132,7 +132,7 @@ const projects = [
         type: "popup tiny bar",
         year: "2018",
         yearRange: "2018/19, 2024",
-        summary: "An immersive tiny bar experience of a mid-century, un-scale, hotel lobby. This \"roach motel\" features morphing wallpaper, resin poured roach wing chandelier, and a stained wooden bar. The staff are dressed as cockroaches of course. This piece will be installed at the Golden Guy Alley (24 tiny bars) at BRC 2019.",
+        summary: "An immersive tiny bar experience of a mid-century, un-scale, hotel lobby. This \"roach motel\" features morphing wallpaper, resin poured roach wing chandelier, and a stained wooden bar. The staff are dressed as cockroaches of course. This piece was installed at the Golden Guy Alley for several years in BRC.",
         links: [
             { text: "Website", url: "https://www.metafaux.com/finalapproachmotel/" }
         ]
@@ -166,7 +166,7 @@ const projects = [
         title: "Interlocked Earings",
         type: "3D printed jewelry",
         year: "2015",
-        summary: "No description available",
+        summary: "3D-printed 20-sided geometric figures interlocked into hanging earrings.",
         noContent: true
     },
     {
@@ -234,7 +234,7 @@ const projects = [
         type: "Board game",
         year: "2011",
         yearRange: "2011-2018",
-        summary: "No description available",
+        summary: "Board game depicting planets and spaceships with resource trading. The theme was cats and vampires.",
         noContent: true
     },
     {
