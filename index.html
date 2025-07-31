@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio : Josh Lind</title>
+    <title>Portfolio :: Josh Lind</title>
     <style>
         * {
             margin: 0;
@@ -108,12 +108,12 @@
             font-weight: 300;
             background: linear-gradient(
                 135deg,
-                #ff0000, #ff4400, #ff8800, #ffaa00, #ffff00, #aaff00, 
-                #55ff00, #00ff00, #00ff55, #00ffaa, #00ffff, #00aaff,
-                #0055ff, #0000ff, #4400ff, #8800ff, #aa00ff, #ff00ff,
-                #ff00aa, #ff0055, #ff0000, #ff4400, #ff8800
+                #ffffff, #f0f0f0, #e0e0e0, #f5f5f5, #ffffff, #f8f8f8, 
+                #e8e8e8, #ffffff, #f2f2f2, #e5e5e5, #ffffff, #f0f0f0,
+                #e0e0e0, #ffffff, #f5f5f5, #e8e8e8, #f0f0f0, #ffffff,
+                #f2f2f2, #e5e5e5, #ffffff, #f0f0f0, #e0e0e0
             );
-            background-size: 800% 800%;
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -124,66 +124,36 @@
             text-transform: none;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             animation: 
-                rainbowShift 8s ease-in-out infinite,
-                textGlow 4s ease-in-out infinite alternate,
-                textFloat 6s ease-in-out infinite,
-                textShimmer 3s linear infinite;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) 
-                    drop-shadow(0 0 15px rgba(255, 0, 255, 0.3))
-                    drop-shadow(0 0 25px rgba(0, 255, 255, 0.2));
+                rainbowShift 12s ease-in-out infinite;
+            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
             position: relative;
             overflow: visible;
         }
 
         .subtitle::before {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.3),
-                transparent,
-                rgba(255, 255, 255, 0.3)
-            );
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmerPass 4s ease-in-out infinite;
-            z-index: 1;
+            display: none;
         }
 
         @keyframes rainbowShift {
             0% { background-position: 0% 50%; }
-            15% { background-position: 25% 25%; }
-            30% { background-position: 50% 0%; }
-            45% { background-position: 75% 25%; }
-            60% { background-position: 100% 50%; }
-            75% { background-position: 75% 75%; }
-            90% { background-position: 25% 100%; }
+            25% { background-position: 50% 25%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 75%; }
             100% { background-position: 0% 50%; }
         }
 
-        @keyframes textGlow {
-            0% { 
-                filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)) 
-                        drop-shadow(0 0 10px rgba(255, 0, 255, 0.2))
-                        drop-shadow(0 0 15px rgba(0, 255, 255, 0.1));
-                transform: scale(1);
+                @keyframes titleOrbit {
+            0%, 100% { 
+                transform: translate(0px, 0px) rotate(0deg);
             }
-            50% {
-                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6)) 
-                        drop-shadow(0 0 25px rgba(255, 0, 255, 0.4))
-                        drop-shadow(0 0 35px rgba(0, 255, 255, 0.3))
-                        drop-shadow(0 0 45px rgba(255, 255, 0, 0.2));
-                transform: scale(1.03);
+            25% { 
+                transform: translate(1px, -2px) rotate(0.5deg);
             }
-            100% { 
-                filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)) 
-                        drop-shadow(0 0 30px rgba(255, 0, 255, 0.3))
-                        drop-shadow(0 0 40px rgba(0, 255, 255, 0.2));
-                transform: scale(1.01);
+            50% { 
+                transform: translate(-1px, -1px) rotate(0deg);
+            }
+            75% { 
+                transform: translate(-2px, 1px) rotate(-0.5deg);
             }
         }
 
@@ -793,7 +763,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Portfolio : Josh Lind</h1>
+            <h1>Portfolio :: Josh Lind</h1>
             <p class="subtitle">Interactive art installations and creative technology</p>
         </header>
 
