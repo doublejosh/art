@@ -346,13 +346,100 @@
         }
 
         .timeline-dot.has-links {
-            background: #ffffff;
+            background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff);
+            background-size: 200% 200%;
+            animation: 
+                dotPulsate 2s ease-in-out infinite,
+                dotShimmer 3s linear infinite,
+                dotGlow 1.5s ease-in-out infinite alternate;
+            box-shadow: 
+                0 0 8px rgba(255, 255, 255, 0.6),
+                0 0 15px rgba(255, 255, 255, 0.4),
+                inset 0 1px 2px rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-dot.has-links::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: dotSweep 2.5s linear infinite;
         }
 
         .timeline-dot.has-links:hover {
-            background: #ffffff;
+            background: linear-gradient(45deg, #ffffff, #f8f8f8, #ffffff);
             border-color: #ffffff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            box-shadow: 
+                0 0 25px rgba(255, 255, 255, 0.8),
+                0 0 35px rgba(255, 255, 255, 0.6),
+                0 0 45px rgba(255, 255, 255, 0.4),
+                inset 0 1px 3px rgba(255, 255, 255, 0.9);
+            animation: 
+                dotPulsate 1.5s ease-in-out infinite,
+                dotShimmer 2s linear infinite,
+                dotGlow 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes dotPulsate {
+            0%, 100% { 
+                transform: translateX(-50%) scale(1);
+            }
+            50% { 
+                transform: translateX(-50%) scale(1.05);
+            }
+        }
+
+        @keyframes dotShimmer {
+            0% { 
+                background-position: 0% 50%;
+            }
+            50% { 
+                background-position: 100% 50%;
+            }
+            100% { 
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes dotGlow {
+            0% {
+                box-shadow: 
+                    0 0 8px rgba(255, 255, 255, 0.6),
+                    0 0 15px rgba(255, 255, 255, 0.4),
+                    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                box-shadow: 
+                    0 0 12px rgba(255, 255, 255, 0.7),
+                    0 0 20px rgba(255, 255, 255, 0.5),
+                    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        @keyframes dotSweep {
+            0% {
+                transform: rotate(45deg) translateX(-100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(45deg) translateX(100%);
+                opacity: 0;
+            }
         }
 
         /* Connection lines from dots to cards */
