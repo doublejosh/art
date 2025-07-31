@@ -4,7 +4,7 @@ const projects = [
         id: "timewarp",
         title: "TimeWarp",
         type: "wooden planetary gears",
-        year: "2024",
+        year: "2023",
         summary: "Signage with universal mechanical gear run by a disco ball motor. Central hub portion shown in video.",
         links: [
             { text: "Demo video", url: "https://www.dropbox.com/scl/fi/innzeyvax5uou8i2tni9b/2023-03-15-18.05.39.mov?rlkey=75so34f8poyefp0vxf5wxvdp9&st=q7x7ehof&dl=0" }
