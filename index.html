@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Portfolio : Josh Lind</title>
+    <title>Portfolio : Josh Lind</title>
     <style>
         * {
             margin: 0;
@@ -91,7 +91,7 @@
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             font-weight: 200;
@@ -104,14 +104,128 @@
 
         .subtitle {
             font-size: 1.1rem;
-            opacity: 0.8;
+            opacity: 1;
             font-weight: 300;
-            color: #d0d0d0;
+            background: linear-gradient(
+                135deg,
+                #ff0000, #ff4400, #ff8800, #ffaa00, #ffff00, #aaff00, 
+                #55ff00, #00ff00, #00ff55, #00ffaa, #00ffff, #00aaff,
+                #0055ff, #0000ff, #4400ff, #8800ff, #aa00ff, #ff00ff,
+                #ff00aa, #ff0055, #ff0000, #ff4400, #ff8800
+            );
+            background-size: 800% 800%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
             font-style: normal;
             margin-bottom: 0;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
             text-transform: none;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            animation: 
+                rainbowShift 8s ease-in-out infinite,
+                textGlow 4s ease-in-out infinite alternate,
+                textFloat 6s ease-in-out infinite,
+                textShimmer 3s linear infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) 
+                    drop-shadow(0 0 15px rgba(255, 0, 255, 0.3))
+                    drop-shadow(0 0 25px rgba(0, 255, 255, 0.2));
+            position: relative;
+            overflow: visible;
+        }
+
+        .subtitle::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.3),
+                transparent,
+                rgba(255, 255, 255, 0.3)
+            );
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmerPass 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes rainbowShift {
+            0% { background-position: 0% 50%; }
+            15% { background-position: 25% 25%; }
+            30% { background-position: 50% 0%; }
+            45% { background-position: 75% 25%; }
+            60% { background-position: 100% 50%; }
+            75% { background-position: 75% 75%; }
+            90% { background-position: 25% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes textGlow {
+            0% { 
+                filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)) 
+                        drop-shadow(0 0 10px rgba(255, 0, 255, 0.2))
+                        drop-shadow(0 0 15px rgba(0, 255, 255, 0.1));
+                transform: scale(1);
+            }
+            50% {
+                filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6)) 
+                        drop-shadow(0 0 25px rgba(255, 0, 255, 0.4))
+                        drop-shadow(0 0 35px rgba(0, 255, 255, 0.3))
+                        drop-shadow(0 0 45px rgba(255, 255, 0, 0.2));
+                transform: scale(1.03);
+            }
+            100% { 
+                filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)) 
+                        drop-shadow(0 0 30px rgba(255, 0, 255, 0.3))
+                        drop-shadow(0 0 40px rgba(0, 255, 255, 0.2));
+                transform: scale(1.01);
+            }
+        }
+
+        @keyframes textFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-2px) rotate(0.5deg); }
+            50% { transform: translateY(-1px) rotate(0deg); }
+            75% { transform: translateY(-3px) rotate(-0.5deg); }
+        }
+
+        @keyframes textShimmer {
+            0% { 
+                text-shadow: 
+                    0 0 5px rgba(255, 255, 255, 0.5),
+                    0 0 10px rgba(255, 0, 255, 0.3),
+                    0 0 15px rgba(0, 255, 255, 0.2);
+            }
+            33% { 
+                text-shadow: 
+                    0 0 8px rgba(255, 255, 0, 0.5),
+                    0 0 15px rgba(255, 0, 0, 0.3),
+                    0 0 20px rgba(0, 255, 0, 0.2);
+            }
+            66% { 
+                text-shadow: 
+                    0 0 6px rgba(0, 255, 255, 0.5),
+                    0 0 12px rgba(0, 0, 255, 0.3),
+                    0 0 18px rgba(255, 255, 255, 0.2);
+            }
+            100% { 
+                text-shadow: 
+                    0 0 5px rgba(255, 255, 255, 0.5),
+                    0 0 10px rgba(255, 0, 255, 0.3),
+                    0 0 15px rgba(0, 255, 255, 0.2);
+            }
+        }
+
+        @keyframes shimmerPass {
+            0% { background-position: -200% 0; opacity: 0; }
+            40% { opacity: 0.6; }
+            60% { opacity: 0.6; }
+            100% { background-position: 200% 0; opacity: 0; }
         }
 
         .timeline {
@@ -544,8 +658,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>Art Portfolio : Josh Lind</h1>
-            <p class="subtitle">Interactive installations, art, and creative technology</p>
+            <h1>Portfolio : Josh Lind</h1>
+            <p class="subtitle">Interactive art installations and creative technology</p>
         </header>
 
         <div class="timeline" id="timeline">
@@ -619,6 +733,7 @@
                     project.links.forEach(link => {
                         const linkElement = document.createElement('a');
                         linkElement.href = link.url;
+                        linkElement.target = '_blank';
                         linkElement.textContent = link.text;
                         linksContainer.appendChild(linkElement);
                     });
