@@ -48,6 +48,7 @@
             max-width: 800px;
             margin: 30px auto;
             padding: 40px 0;
+            min-height: 2000px;
         }
 
         .timeline::before {
@@ -63,8 +64,8 @@
         }
 
         .timeline-item {
-            position: relative;
-            margin: 40px 0;
+            position: absolute;
+            width: 100%;
             display: flex;
             align-items: center;
         }
@@ -77,11 +78,28 @@
             flex-direction: row-reverse;
         }
 
+        /* Year-based positioning */
+        .timeline-item[data-year="2024"] { top: 0px; }
+        .timeline-item[data-year="2023"] { top: 120px; }
+        .timeline-item[data-year="2022"] { top: 240px; }
+        .timeline-item[data-year="2021"] { top: 360px; }
+        .timeline-item[data-year="2020"] { top: 480px; }
+        .timeline-item[data-year="2019"] { top: 600px; }
+        .timeline-item[data-year="2018"] { top: 720px; }
+        .timeline-item[data-year="2016"] { top: 840px; }
+        .timeline-item[data-year="2015"] { top: 960px; }
+        .timeline-item[data-year="2014"] { top: 1080px; }
+        .timeline-item[data-year="2013"] { top: 1200px; }
+        .timeline-item[data-year="2011"] { top: 1320px; }
+        .timeline-item[data-year="2010"] { top: 1440px; }
+        .timeline-item[data-year="2007"] { top: 1560px; }
+        .timeline-item[data-year="2005"] { top: 1680px; }
+
         .timeline-dot {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             background: white;
-            border: 4px solid #3498db;
+            border: 3px solid #3498db;
             border-radius: 50%;
             position: absolute;
             left: 50%;
@@ -91,10 +109,60 @@
             transition: all 0.3s ease;
         }
 
+        /* Dynamic dot sizing based on content richness */
+        .timeline-dot.dot-small {
+            width: 12px;
+            height: 12px;
+            border-width: 2px;
+        }
+
+        .timeline-dot.dot-medium {
+            width: 16px;
+            height: 16px;
+            border-width: 3px;
+        }
+
+        .timeline-dot.dot-large {
+            width: 22px;
+            height: 22px;
+            border-width: 4px;
+        }
+
+        .timeline-dot.dot-xlarge {
+            width: 28px;
+            height: 28px;
+            border-width: 5px;
+        }
+
         .timeline-dot:hover {
-            transform: translateX(-50%) scale(1.3);
+            transform: translateX(-50%) scale(2);
             border-color: #e74c3c;
             box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+        }
+
+        /* Connection lines from dots to cards */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: #bdc3c7;
+            top: 50%;
+            z-index: 5;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            left: calc(50% + 20px);
+        }
+
+        .timeline-item:nth-child(even)::after {
+            right: calc(50% + 20px);
+        }
+
+        .timeline-item:hover::after {
+            background: #3498db;
+            width: 60px;
         }
 
         .project-card {
@@ -106,8 +174,11 @@
             border: 1px solid #e0e0e0;
             position: relative;
             overflow: hidden;
-            width: 200px;
-            height: 80px;
+            min-width: 180px;
+            max-width: 350px;
+            width: auto;
+            height: auto;
+            min-height: 70px;
             cursor: pointer;
             margin: 0 40px;
         }
@@ -123,7 +194,7 @@
         }
 
         .project-card:hover {
-            transform: scale(2.2);
+            transform: scale(1.2);
             transform-origin: center;
             z-index: 100;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
@@ -279,368 +350,392 @@
             <p>Spanning from 2005 to present</p>
         </div>
 
-        <div class="timeline">
-            <!-- TimeWarp Mechanical Sign -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">TimeWarp</h2>
-                    <span class="project-type">wooden planetary gears</span>
-                    <div class="project-year">2024</div>
-                    <p class="project-summary">Signage with universal mechanical gear run by a disco ball motor. Central hub portion shown in video.</p>
-                    <div class="project-links">
-                        <a href="https://www.dropbox.com/scl/fi/innzeyvax5uou8i2tni9b/2023-03-15-18.05.39.mov?rlkey=75so34f8poyefp0vxf5wxvdp9&st=q7x7ehof&dl=0">Demo video</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Whiskey O'Clock -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Whiskey O'Clock</h2>
-                    <span class="project-type">giant 7-segment display</span>
-                    <div class="project-year">2024–present</div>
-                    <p class="project-summary">Giant digital clock with 7-segment displays made from whiskey bottles. The ends of rectangular bottles make up the pieces of this jumbo very-lo-res "screen."</p>
-                    <div class="project-links">
-                        <a href="https://www.instagram.com/reel/C2JPbp2xCbY/">Prototype</a>
-                        <a href="https://www.dropbox.com/scl/fi/e0usvywct9gnfwn3p9oga/2024-04-11-19.51.06.mov?rlkey=56707ki9c2csljepkwb06r2f1&st=r7sqivl0&dl=0">Full-scale draft</a>
-                        <a href="#">In-progress</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Posters from the Future -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Posters from the Future</h2>
-                    <span class="project-type">posters and signage</span>
-                    <div class="project-year">2023</div>
-                    <p class="project-summary">Part of an immersive walk-through called City of the Future at the Teal Building on Capitol Hill, these posters and lightboxes helped draw guests into the future world of the exhibit. Pieces included advertisements and propaganda from businesses and city government. The work explored classism, utopia/dystopia, and how the future will affect our daily lives.</p>
-                    <div class="project-links">
-                        <a href="https://www.instagram.com/p/Cs48Z7Zx4Ez/">Instagram</a>
-                        <a href="https://seattlecityofthefuture.com/">Website</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Puget Sound -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Puget Sound</h2>
-                    <span class="project-type">Topography in resin</span>
-                    <div class="project-year">2023</div>
-                    <p class="project-summary no-content">No description available</p>
-                </div>
-            </div>
-
-            <!-- Electric Sheep -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Electric Sheep</h2>
-                    <span class="project-type">DJ night posters x18</span>
-                    <div class="project-year">2023-2025</div>
-                    <p class="project-summary no-content">No description available</p>
-                </div>
-            </div>
-
-            <!-- Flower sign -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Flower sign</h2>
-                    <span class="project-type">Outdoor field marker</span>
-                    <div class="project-year">2023</div>
-                    <p class="project-summary no-content">No description available</p>
-                </div>
-            </div>
-
-            <!-- Color Learning Box -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Color Learning Box</h2>
-                    <span class="project-type">interactive toy</span>
-                    <div class="project-year">2022</div>
-                    <p class="project-summary no-content">No description available</p>
-                </div>
-            </div>
-
-            <!-- Potato Man -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Potato Man</h2>
-                    <span class="project-type">Electronic-organic figurine</span>
-                    <div class="project-year">2021</div>
-                    <p class="project-summary no-content">No description available</p>
-                </div>
-            </div>
-
-            <!-- Fortune Calibrator -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Fortune Calibrator</h2>
-                    <span class="project-type">arcade fortune machine</span>
-                    <div class="project-year">2020</div>
-                    <p class="project-summary">A custom arcade machine that delivers fortunes based on a few yes/no questions, which costs one quarter. Participants are asked to rate accuracy, and everything is saved to the cloud. A mobile web app allows collecting and rating fortunes by witty collaborators. Adjustments are planned to calibrate the AI and distribute a series of machines to collect data.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/doublejosh/FortuneTeller/wiki">GitHub wiki [photos]</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- POP·AGENDA -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">POP·AGENDA</h2>
-                    <span class="project-type">food truck art car</span>
-                    <div class="project-year">2019–present</div>
-                    <p class="project-summary">This mini food-truck serves popcorn and functions as a DJ booth. The volunteer employees wear 1950s period costumes (hats, bow ties, and aprons) while giving away snacks. This piece was, and will be, taken to CascadiaNW and SeaCompression.</p>
-                    <div class="project-links">
-                        <a href="https://doublejosh.com/post/184371658853/popagenda">Sketches and photos</a>
-                        <a href="https://popagenda.org/">popagenda.org</a>
-                        <a href="https://www.instagram.com/the_pop_agenda/">Instagram</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Emmett -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Emmett</h2>
-                    <span class="project-type">open-source hover board</span>
-                    <div class="project-year">2019</div>
-                    <p class="project-summary">This was my effort to create a DIY one-wheel, self-balancing, electric skateboard. As the project progressed it became obvious this should be open-sourced. I was able to achieve decent accelerometer control and dealt with battery management, but got stuck handling the throttles of brushless electric motor controllers. I'd love to reboot this someday.</p>
-                    <div class="project-links">
-                        <a href="https://openemmett.tumblr.com/">Blog</a>
-                        <a href="https://github.com/doublejosh/emmett/wiki">Instructions wiki</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Light Skirmish -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Light Skirmish</h2>
-                    <span class="project-type">large interactive game</span>
-                    <div class="project-year">2018</div>
-                    <p class="project-summary">Interactive two-player game comprised of a circular array of wifi-controlled multi-color LED stage lights and two large wireless nautical steering wheels. Players face one another across the circle and must spin their wheel… causing lights to illuminate in a series around the loop. The "spinning" lights decrease in speed with the game's goal to stop on the opposing player. This game was built using Wemos Arduino micro-controllers inserted into 24 outdoor 10W/12V LED flood lights, powered by lithium battery packs. Installed at Electric Sky Art Camp and Burien Arts-A-Glow.</p>
-                </div>
-            </div>
-
-            <!-- Doctrine -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Doctrine</h2>
-                    <span class="project-type">Board game + stamp pieces</span>
-                    <div class="project-year">2018</div>
-                    <p class="project-summary no-content">No description available</p>
-                </div>
-            </div>
-
-            <!-- Final Approach Motel -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Final Approach Motel</h2>
-                    <span class="project-type">popup tiny bar</span>
-                    <div class="project-year">2018/19, 2024</div>
-                    <p class="project-summary">An immersive tiny bar experience of a mid-century, un-scale, hotel lobby. This "roach motel" features morphing wallpaper, resin poured roach wing chandelier, and a stained wooden bar. The staff are dressed as cockroaches of course. This piece will be installed at the Golden Guy Alley (24 tiny bars) at BRC 2019.</p>
-                    <div class="project-links">
-                        <a href="https://www.metafaux.com/finalapproachmotel/">Website</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lux Stellate -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Lux Stellate</h2>
-                    <span class="project-type">geometric chandelier</span>
-                    <div class="project-year">2016</div>
-                    <p class="project-summary">A glowing star, comprised of two intersecting tetrahedron pyramids, constructed from clear tubes with RGB LEDs inside along each edge. The shape expresses a number of lighting patterns that are beautiful to watch and show off the geometry of the hanging art. It appears as a floating, mystical, 3D hexagram, Merkabah, geometric, alluring chandelier. The scale was 6 feet across.</p>
-                    <div class="project-links">
-                        <a href="http://doublejosh.com/post/150948636018/light-star">Read More & Parts list</a>
-                        <a href="http://f.cl.ly/items/28222V0w1W1W2e2T1S07/MEB_20140906_394.jpg">Photo 1</a>
-                        <a href="http://cl.ly/image/041P312y2i3i/140906205535_0487.jpg">Photo 2</a>
-                        <a href="https://flic.kr/p/pmunLk">Photo 3</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Stormbrella -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Stormbrella</h2>
-                    <span class="project-type">rain and lightening umbrella</span>
-                    <div class="project-year">2016</div>
-                    <p class="project-summary">Provides a mobile stormy light show. A clear umbrella is lined with addressable LEDs on the spines, which display a random rain simulation. Occasionally thunder will strike at random intervals and strength. Care was taken to ensure natural effects. Useful to improve friends finding you.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/doublejosh/stormbrella">GitHub code</a>
-                        <a href="https://www.youtube.com/watch?v=DrYusomXhdg">Video</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Interlocked Earings -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Interlocked Earings</h2>
-                    <span class="project-type">jewelery</span>
-                    <div class="project-year">2015</div>
-                    <p class="project-summary no-content">No description available</p>
-                </div>
-            </div>
-
-            <!-- Summer Rain -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Summer Rain</h2>
-                    <span class="project-type">smart fountain</span>
-                    <div class="project-year">2015</div>
-                    <p class="project-summary">A computer controlled graphical fountain that "prints" designs using falling drops of water. Audio input allows participants to interact with the fountain and influence the designs produced. The foundation is large enough for people to stand in an outer basin around the controlled water jets. It is lit for night time displays.</p>
-                    <div class="project-links">
-                        <a href="https://www.hackster.io/4712/sound-reactive-fountain-81d461">View on Hackster</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sparkle Shoes -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Sparkle Shoes</h2>
-                    <span class="project-type">sensing lit footwear</span>
-                    <div class="project-year">2014</div>
-                    <p class="project-summary">Set of RGB LED rimmed sneakers with force sensor inputs that control the color as the wearer steps, dances or jumps for joy. The shoes have several light modes which can be cycled through with a "double heel stomp" action. Battery packs and controller is worn on the ankle.</p>
-                    <div class="project-links">
-                        <a href="https://www.youtube.com/watch?v=D-02U-SUFkM">Video in rainbow mode</a>
-                        <a href="http://f.cl.ly/items/3f1P363X432z3J3g2307/SparkleShoes.pdf">Hardware diagram (PDF)</a>
-                        <a href="https://www.youtube.com/watch?v=b7zJV3MI86I">Video V3</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Rain Cloud -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Rain Cloud</h2>
-                    <span class="project-type">dynamic art on a stick</span>
-                    <div class="project-year">2014</div>
-                    <p class="project-summary">Cartoonish, lit, large rain cloud on the end of an 8 ft. pole held above one's head. LED strands dangling from the cloud emulate random rain drops falling on the person holding the piece. Simple lights make the white cloud visible. The art is useful for being recognized across a crowded event and for sneaking into pictures.</p>
-                    <div class="project-links">
-                        <a href="http://mashable.com/2014/08/28/burning-man-night-2014/">Featured in Mashable article</a>
-                        <a href="http://cl.ly/image/3m0o2N2K1N0c/10500259_10203627538361932_3336589148971603505_n.jpg">Photo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Meteorolumen -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Meteorolumen</h2>
-                    <span class="project-type">virtual weather window</span>
-                    <div class="project-year">2013</div>
-                    <p class="project-summary">Consists of a 2D array of Arduino controlled RGB LEDs which simulates slow flakes falling, rain pouring, and leaves tumbling down. It is presented behind a long vertical vintage (recovered) window. The viewer peers through the glass to watch seasons change as the randomized weather streams by. Now privately owned.</p>
-                    <div class="project-links">
-                        <a href="http://www.youtube.com/watch?v=U2_FuWgj0B8">Just snow, just lights</a>
-                        <a href="http://www.youtube.com/watch?v=d0-1pvcFxM8">Single speed flakes</a>
-                        <a href="https://github.com/doublejosh/Frightful_Weather">GitHub</a>
-                        <a href="http://www.mynewsletterbuilder.com/email/newsletter/1411573309">Oscillate 1</a>
-                        <a href="http://dorkbotsea.org/events/oscillate-art-celebrating-light-and-movement">Oscillate 2</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Night Balloons -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Night Balloons</h2>
-                    <span class="project-type">glowing orb array</span>
-                    <div class="project-year">2013</div>
-                    <p class="project-summary">A string of balloon lanterns, each with a microchipped RGB LED bulb, making them controllable inflatable light bulbs synchronized from an Arduino processor on the ground. The light patterns and simulated motion is done via phone/ethernet cords and connection terminals. This piece has been setup with helium as single vertical chain as well as in a 3D geometric (tetrahedron) array.</p>
-                    <div class="project-links">
-                        <a href="http://www.youtube.com/watch?v=B_QpBHy1OX4">Installed #1</a>
-                        <a href="http://www.youtube.com/watch?v=ka-9o_Phb_I">Installed #2</a>
-                        <a href="https://github.com/doublejosh/balloon_arch">GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Space Cat Vampire Adventure -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Space Cat Vampire Adventure</h2>
-                    <span class="project-type">Board game</span>
-                    <div class="project-year">2011-2018</div>
-                    <p class="project-summary no-content">No description available</p>
-                </div>
-            </div>
-
-            <!-- Steve the Robot H.E.Ai.D. -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Steve the Robot H.E.Ai.D.</h2>
-                    <span class="project-type">interactive audio experience</span>
-                    <div class="project-year">2010</div>
-                    <p class="project-summary">A large-scale, interactive, collaborative audio installation in which people moved to control lasers generate music together. Short for Human Energized Artificial Intelligence Device— the project was intended as a new type of instrument played both as an individual and/or within a group. Because sound was created by simple movement the barrier to participation was low, and emergent collaborative exploration often became the focus.</p>
-                    <div class="project-links">
-                        <a href="https://www.slideshare.net/slideshow/making-of-steve-the-robot-heaid/3942828">Making of Steve the Robot</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Radioator -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Radioator</h2>
-                    <span class="project-type">mobile broadcast cart</span>
-                    <div class="project-year">2007</div>
-                    <p class="project-summary">A mobile radio station built on a golf cart chassis that broadcast mobile FM (25mW). It allowed vehicles and people to synchronize nearby; sometimes silently using ear phones (50 provided to guests), as well as synchronizing disparate speaker systems. The cart frame was made to look like a giant 12 foot set of headphones in bright chartreuse using two fold-out hemispheres and a connecting arch tubes.</p>
-                </div>
-            </div>
-
-            <!-- iheartSEA -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">iheartSEA</h2>
-                    <span class="project-type">local news aggregator</span>
-                    <div class="project-year">2005</div>
-                    <p class="project-summary">This project was a web platform expressing the unique online voice of different neighborhoods within the Seattle area. As people and businesses voiced their thoughts via their twitter account or blog it would join the stream. (Folks could also create an account directly). At its essence iheartsea.com was a news and chatter aggregator.</p>
-                </div>
-            </div>
-
-            <!-- Anthropornography -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="project-card">
-                    <h2 class="project-title">Anthropornography</h2>
-                    <span class="project-type">faux cologne brand</span>
-                    <div class="project-year">2005</div>
-                    <p class="project-summary">A collaboration with an essential scent business owner, it presented a fantastical brand backstory for a custom-made scent. It was an experiment in alternative packaging for an existing product which supposed an ancient grounding in the human sexual response to the cologne. This includes: web presence, brand, cards, retail display, and product packaging.</p>
-                </div>
-            </div>
+        <div class="timeline" id="timeline">
         </div>
     </div>
+
+    <script>
+        // Project data configuration
+        const projects = [
+            {
+                id: "timewarp",
+                title: "TimeWarp",
+                type: "wooden planetary gears",
+                year: "2024",
+                summary: "Signage with universal mechanical gear run by a disco ball motor. Central hub portion shown in video.",
+                links: [
+                    { text: "Demo video", url: "https://www.dropbox.com/scl/fi/innzeyvax5uou8i2tni9b/2023-03-15-18.05.39.mov?rlkey=75so34f8poyefp0vxf5wxvdp9&st=q7x7ehof&dl=0" }
+                ]
+            },
+            {
+                id: "whiskey-oclock",
+                title: "Whiskey O'Clock",
+                type: "giant 7-segment display",
+                year: "2024",
+                yearRange: "2024–present",
+                summary: "Giant digital clock with 7-segment displays made from whiskey bottles. The ends of rectangular bottles make up the pieces of this jumbo very-lo-res \"screen.\"",
+                links: [
+                    { text: "Prototype", url: "https://www.instagram.com/reel/C2JPbp2xCbY/" },
+                    { text: "Full-scale draft", url: "https://www.dropbox.com/scl/fi/e0usvywct9gnfwn3p9oga/2024-04-11-19.51.06.mov?rlkey=56707ki9c2csljepkwb06r2f1&st=r7sqivl0&dl=0" },
+                    { text: "In-progress", url: "#" }
+                ]
+            },
+            {
+                id: "posters-future",
+                title: "Posters from the Future",
+                type: "posters and signage",
+                year: "2024",
+                yearRange: "2023",
+                summary: "Part of an immersive walk-through called City of the Future at the Teal Building on Capitol Hill, these posters and lightboxes helped draw guests into the future world of the exhibit. Pieces included advertisements and propaganda from businesses and city government. The work explored classism, utopia/dystopia, and how the future will affect our daily lives.",
+                links: [
+                    { text: "Instagram", url: "https://www.instagram.com/p/Cs48Z7Zx4Ez/" },
+                    { text: "Website", url: "https://seattlecityofthefuture.com/" }
+                ]
+            },
+            {
+                id: "puget-sound",
+                title: "Puget Sound",
+                type: "Topography in resin",
+                year: "2023",
+                summary: "No description available",
+                noContent: true
+            },
+            {
+                id: "electric-sheep",
+                title: "Electric Sheep",
+                type: "DJ night posters x18",
+                year: "2023",
+                yearRange: "2023-2025",
+                summary: "No description available",
+                noContent: true
+            },
+            {
+                id: "flower-sign",
+                title: "Flower sign",
+                type: "Outdoor field marker",
+                year: "2023",
+                summary: "No description available",
+                noContent: true
+            },
+            {
+                id: "color-learning-box",
+                title: "Color Learning Box",
+                type: "interactive toy",
+                year: "2022",
+                summary: "No description available",
+                noContent: true
+            },
+            {
+                id: "potato-man",
+                title: "Potato Man",
+                type: "Electronic-organic figurine",
+                year: "2021",
+                summary: "No description available",
+                noContent: true
+            },
+            {
+                id: "fortune-calibrator",
+                title: "Fortune Calibrator",
+                type: "arcade fortune machine",
+                year: "2020",
+                yearRange: "2020–2021",
+                summary: "I wanted to make a classic fortune-telling machine that reveals the existential doom inside every outcome. This machine presents a single outcome in relation to all choices, and makes it clear that even the best fortune is cursed with temporality and entropy.",
+                links: [
+                    { text: "More photos and sketches", url: "https://doublejosh.com/post/186006325043/fortune-calibrator" }
+                ]
+            },
+            {
+                id: "pop-agenda",
+                title: "POP·AGENDA",
+                type: "food truck art car",
+                year: "2019",
+                yearRange: "2019–present",
+                summary: "This mini food-truck serves popcorn and functions as a DJ booth. The volunteer employees wear 1950s period costumes (hats, bow ties, and aprons) while giving away snacks. This piece was, and will be, taken to CascadiaNW and SeaCompression.",
+                links: [
+                    { text: "Sketches and photos", url: "https://doublejosh.com/post/184371658853/popagenda" },
+                    { text: "popagenda.org", url: "https://popagenda.org/" },
+                    { text: "Instagram", url: "https://www.instagram.com/the_pop_agenda/" }
+                ]
+            },
+            {
+                id: "emmett",
+                title: "Emmett",
+                type: "open-source hover board",
+                year: "2019",
+                summary: "This was my effort to create a DIY one-wheel, self-balancing, electric skateboard. As the project progressed it became obvious this should be open-sourced. I was able to achieve decent accelerometer control and dealt with battery management, but got stuck handling the throttles of brushless electric motor controllers. I'd love to reboot this someday.",
+                links: [
+                    { text: "Blog", url: "https://openemmett.tumblr.com/" },
+                    { text: "Instructions wiki", url: "https://github.com/doublejosh/emmett/wiki" }
+                ]
+            },
+            {
+                id: "light-skirmish",
+                title: "Light Skirmish",
+                type: "large interactive game",
+                year: "2018",
+                summary: "Interactive two-player game comprised of a circular array of wifi-controlled multi-color LED stage lights and two large wireless nautical steering wheels. Players face one another across the circle and must spin their wheel… causing lights to illuminate in a series around the loop. The \"spinning\" lights decrease in speed with the game's goal to stop on the opposing player. This game was built using Wemos Arduino micro-controllers inserted into 24 outdoor 10W/12V LED flood lights, powered by lithium battery packs. Installed at Electric Sky Art Camp and Burien Arts-A-Glow."
+            },
+            {
+                id: "doctrine",
+                title: "Doctrine",
+                type: "Board game + stamp pieces",
+                year: "2018",
+                summary: "No description available",
+                noContent: true
+            },
+            {
+                id: "final-approach-motel",
+                title: "Final Approach Motel",
+                type: "popup tiny bar",
+                year: "2018",
+                yearRange: "2018/19, 2024",
+                summary: "An immersive tiny bar experience of a mid-century, un-scale, hotel lobby. This \"roach motel\" features morphing wallpaper, resin poured roach wing chandelier, and a stained wooden bar. The staff are dressed as cockroaches of course. This piece will be installed at the Golden Guy Alley (24 tiny bars) at BRC 2019.",
+                links: [
+                    { text: "Website", url: "https://www.metafaux.com/finalapproachmotel/" }
+                ]
+            },
+            {
+                id: "lux-stellate",
+                title: "Lux Stellate",
+                type: "geometric chandelier",
+                year: "2016",
+                summary: "A glowing star, comprised of two intersecting tetrahedron pyramids, constructed from clear tubes with RGB LEDs inside along each edge. The shape expresses a number of lighting patterns that are beautiful to watch and show off the geometry of the hanging art. It appears as a floating, mystical, 3D hexagram, Merkabah, geometric, alluring chandelier. The scale was 6 feet across.",
+                links: [
+                    { text: "Read More & Parts list", url: "http://doublejosh.com/post/150948636018/light-star" },
+                    { text: "Photo 1", url: "http://f.cl.ly/items/28222V0w1W1W2e2T1S07/MEB_20140906_394.jpg" },
+                    { text: "Photo 2", url: "http://cl.ly/image/041P312y2i3i/140906205535_0487.jpg" },
+                    { text: "Photo 3", url: "https://flic.kr/p/pmunLk" }
+                ]
+            },
+            {
+                id: "stormbrella",
+                title: "Stormbrella",
+                type: "rain and lightening umbrella",
+                year: "2016",
+                summary: "Provides a mobile stormy light show. A clear umbrella is lined with addressable LEDs on the spines, which display a random rain simulation. Occasionally thunder will strike at random intervals and strength. Care was taken to ensure natural effects. Useful to improve friends finding you.",
+                links: [
+                    { text: "GitHub code", url: "https://github.com/doublejosh/stormbrella" },
+                    { text: "Video", url: "https://www.youtube.com/watch?v=DrYusomXhdg" }
+                ]
+            },
+            {
+                id: "interlocked-earings",
+                title: "Interlocked Earings",
+                type: "3D printed jewelry",
+                year: "2015",
+                summary: "No description available",
+                noContent: true
+            },
+            {
+                id: "summer-rain",
+                title: "Summer Rain",
+                type: "smart fountain",
+                year: "2015",
+                summary: "A computer controlled graphical fountain that \"prints\" designs using falling drops of water. Audio input allows participants to interact with the fountain and influence the designs produced. The foundation is large enough for people to stand in an outer basin around the controlled water jets. It is lit for night time displays.",
+                links: [
+                    { text: "View on Hackster", url: "https://www.hackster.io/4712/sound-reactive-fountain-81d461" }
+                ]
+            },
+            {
+                id: "sparkle-shoes",
+                title: "Sparkle Shoes",
+                type: "sensing lit footwear",
+                year: "2014",
+                summary: "Set of RGB LED rimmed sneakers with force sensor inputs that control the color as the wearer steps, dances or jumps for joy. The shoes have several light modes which can be cycled through with a \"double heel stomp\" action. Battery packs and controller is worn on the ankle.",
+                links: [
+                    { text: "Video in rainbow mode", url: "https://www.youtube.com/watch?v=D-02U-SUFkM" },
+                    { text: "Hardware diagram (PDF)", url: "http://f.cl.ly/items/3f1P363X432z3J3g2307/SparkleShoes.pdf" },
+                    { text: "Video V3", url: "https://www.youtube.com/watch?v=b7zJV3MI86I" }
+                ]
+            },
+            {
+                id: "rain-cloud",
+                title: "Rain Cloud",
+                type: "dynamic art on a stick",
+                year: "2014",
+                summary: "Cartoonish, lit, large rain cloud on the end of an 8 ft. pole held above one's head. LED strands dangling from the cloud emulate random rain drops falling on the person holding the piece. Simple lights make the white cloud visible. The art is useful for being recognized across a crowded event and for sneaking into pictures.",
+                links: [
+                    { text: "Featured in Mashable article", url: "http://mashable.com/2014/08/28/burning-man-night-2014/" },
+                    { text: "Photo", url: "http://cl.ly/image/3m0o2N2K1N0c/10500259_10203627538361932_3336589148971603505_n.jpg" }
+                ]
+            },
+            {
+                id: "meteorolumen",
+                title: "Meteorolumen",
+                type: "virtual weather window",
+                year: "2013",
+                summary: "Consists of a 2D array of Arduino controlled RGB LEDs which simulates slow flakes falling, rain pouring, and leaves tumbling down. It is presented behind a long vertical vintage (recovered) window. The viewer peers through the glass to watch seasons change as the randomized weather streams by. Now privately owned.",
+                links: [
+                    { text: "Just snow, just lights", url: "http://www.youtube.com/watch?v=U2_FuWgj0B8" },
+                    { text: "Single speed flakes", url: "http://www.youtube.com/watch?v=d0-1pvcFxM8" },
+                    { text: "GitHub", url: "https://github.com/doublejosh/Frightful_Weather" },
+                    { text: "Oscillate 1", url: "http://www.mynewsletterbuilder.com/email/newsletter/1411573309" },
+                    { text: "Oscillate 2", url: "http://dorkbotsea.org/events/oscillate-art-celebrating-light-and-movement" }
+                ]
+            },
+            {
+                id: "night-balloons",
+                title: "Night Balloons",
+                type: "glowing orb array",
+                year: "2013",
+                summary: "A string of balloon lanterns, each with a microchipped RGB LED bulb, making them controllable inflatable light bulbs synchronized from an Arduino processor on the ground. The light patterns and simulated motion is done via phone/ethernet cords and connection terminals. This piece has been setup with helium as single vertical chain as well as in a 3D geometric (tetrahedron) array.",
+                links: [
+                    { text: "Installed #1", url: "http://www.youtube.com/watch?v=B_QpBHy1OX4" },
+                    { text: "Installed #2", url: "http://www.youtube.com/watch?v=ka-9o_Phb_I" },
+                    { text: "GitHub", url: "https://github.com/doublejosh/balloon_arch" }
+                ]
+            },
+            {
+                id: "space-cat-vampire",
+                title: "Space Cat Vampire Adventure",
+                type: "Board game",
+                year: "2011",
+                yearRange: "2011-2018",
+                summary: "No description available",
+                noContent: true
+            },
+            {
+                id: "steve-robot",
+                title: "Steve the Robot H.E.Ai.D.",
+                type: "interactive audio experience",
+                year: "2010",
+                summary: "A large-scale, interactive, collaborative audio installation in which people moved to control lasers generate music together. Short for Human Energized Artificial Intelligence Device— the project was intended as a new type of instrument played both as an individual and/or within a group. Because sound was created by simple movement the barrier to participation was low, and emergent collaborative exploration often became the focus.",
+                links: [
+                    { text: "Making of Steve the Robot", url: "https://www.slideshare.net/slideshow/making-of-steve-the-robot-heaid/3942828" }
+                ]
+            },
+            {
+                id: "radioator",
+                title: "Radioator",
+                type: "mobile broadcast cart",
+                year: "2007",
+                summary: "A mobile radio station built on a golf cart chassis that broadcast mobile FM (25mW). It allowed vehicles and people to synchronize nearby; sometimes silently using ear phones (50 provided to guests), as well as synchronizing disparate speaker systems. The cart frame was made to look like a giant 12 foot set of headphones in bright chartreuse using two fold-out hemispheres and a connecting arch tubes."
+            },
+            {
+                id: "iheartsea",
+                title: "iheartSEA",
+                type: "local news aggregator",
+                year: "2005",
+                summary: "This project was a web platform expressing the unique online voice of different neighborhoods within the Seattle area. As people and businesses voiced their thoughts via their twitter account or blog it would join the stream. (Folks could also create an account directly). At its essence iheartsea.com was a news and chatter aggregator."
+            },
+            {
+                id: "anthropornography",
+                title: "Anthropornography",
+                type: "faux cologne brand",
+                year: "2005",
+                summary: "A collaboration with an essential scent business owner, it presented a fantastical brand backstory for a custom-made scent. It was an experiment in alternative packaging for an existing product which supposed an ancient grounding in the human sexual response to the cologne. This includes: web presence, brand, cards, retail display, and product packaging."
+            }
+        ];
+
+        // Render projects function
+        function renderProjects() {
+            const timeline = document.getElementById('timeline');
+            
+            projects.forEach(project => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                timelineItem.setAttribute('data-year', project.year);
+                
+                // Calculate content richness for dot sizing
+                const contentScore = calculateContentScore(project);
+                const dotSize = getDotSizeClass(contentScore);
+                
+                // Create timeline dot with dynamic size
+                const dot = document.createElement('div');
+                dot.className = `timeline-dot ${dotSize}`;
+                
+                // Create project card (no size class needed - auto-sizing)
+                const card = document.createElement('div');
+                card.className = 'project-card';
+                
+                // Project title
+                const title = document.createElement('h2');
+                title.className = 'project-title';
+                title.textContent = project.title;
+                
+                // Project type
+                const type = document.createElement('span');
+                type.className = 'project-type';
+                type.textContent = project.type;
+                
+                // Project year
+                const year = document.createElement('div');
+                year.className = 'project-year';
+                year.textContent = project.yearRange || project.year;
+                
+                // Project summary
+                const summary = document.createElement('p');
+                summary.className = project.noContent ? 'project-summary no-content' : 'project-summary';
+                summary.textContent = project.summary;
+                
+                // Project links
+                const linksContainer = document.createElement('div');
+                linksContainer.className = 'project-links';
+                
+                if (project.links) {
+                    project.links.forEach(link => {
+                        const linkElement = document.createElement('a');
+                        linkElement.href = link.url;
+                        linkElement.textContent = link.text;
+                        linksContainer.appendChild(linkElement);
+                    });
+                }
+                
+                // Assemble card
+                card.appendChild(title);
+                card.appendChild(type);
+                card.appendChild(year);
+                card.appendChild(summary);
+                if (project.links) {
+                    card.appendChild(linksContainer);
+                }
+                
+                // Assemble timeline item
+                timelineItem.appendChild(dot);
+                timelineItem.appendChild(card);
+                
+                // Add to timeline
+                timeline.appendChild(timelineItem);
+            });
+        }
+
+        // Calculate content richness score
+        function calculateContentScore(project) {
+            let score = 0;
+            
+            // Base score for having content
+            if (!project.noContent) score += 10;
+            
+            // Summary length contribution
+            if (project.summary) {
+                if (project.summary.length > 200) score += 30;
+                else if (project.summary.length > 100) score += 20;
+                else if (project.summary.length > 50) score += 10;
+            }
+            
+            // Links contribution
+            if (project.links) {
+                score += project.links.length * 8;
+            }
+            
+            // Year range complexity
+            if (project.yearRange && project.yearRange !== project.year) {
+                score += 5;
+            }
+            
+            return score;
+        }
+
+        // Convert content score to dot size class
+        function getDotSizeClass(score) {
+            if (score >= 40) return 'dot-xlarge';
+            if (score >= 25) return 'dot-large';
+            if (score >= 15) return 'dot-medium';
+            return 'dot-small';
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', renderProjects);
+    </script>
 </body>
 </html>
