@@ -102,6 +102,29 @@
             line-height: 1.1;
         }
 
+        .subtitle-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .subtitle-text {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #ffffff;
+            font-style: normal;
+            margin-bottom: 0;
+            letter-spacing: 0.8px;
+            text-transform: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            position: relative;
+            z-index: 10;
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 12px;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
         .subtitle {
             font-size: 1.1rem;
             opacity: 1;
@@ -124,22 +147,218 @@
             text-transform: none;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             animation: 
-                rainbowShift 12s ease-in-out infinite;
+                subtitleCycle 20s ease-in-out infinite,
+                subtitleGlow 20s ease-in-out infinite,
+                subtitleFloat 20s ease-in-out infinite;
             filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
             overflow: visible;
+            padding: 8px 12px;
+            border-radius: 12px;
+            backdrop-filter: blur(1px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
+            display: inline-block;
+            z-index: 1;
+            line-height: 1.2;
+            white-space: nowrap;
         }
 
         .subtitle::before {
-            display: none;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            z-index: -1;
         }
 
-        @keyframes rainbowShift {
-            0% { background-position: 0% 50%; }
-            25% { background-position: 50% 25%; }
-            50% { background-position: 100% 50%; }
-            75% { background-position: 50% 75%; }
-            100% { background-position: 0% 50%; }
+        @keyframes subtitleCycle {
+            /* Calm phase - grayscale gradient */
+            0% { 
+                background: linear-gradient(
+                    135deg,
+                    #ffffff, #f0f0f0, #e0e0e0, #f5f5f5, #ffffff, #f8f8f8, 
+                    #e8e8e8, #ffffff, #f2f2f2, #e5e5e5, #ffffff, #f0f0f0,
+                    #e0e0e0, #ffffff, #f5f5f5, #e8e8e8, #f0f0f0, #ffffff,
+                    #f2f2f2, #e5e5e5, #ffffff, #f0f0f0, #e0e0e0
+                );
+                background-size: 300% 300%;
+                background-position: 0% 50%;
+            }
+            
+            /* Smooth transition to pastel colors */
+            10% { 
+                background: linear-gradient(
+                    135deg,
+                    #ffebee, #f3e5f5, #e8f5e8, #fff3e0, #f9fbe7, #e3f2fd,
+                    #fce4ec, #f1f8e9, #e0f2f1, #fff8e1, #f3e5f5, #e8eaf6,
+                    #ffebee, #f9fbe7, #e3f2fd, #fce4ec, #f1f8e9, #e0f2f1,
+                    #fff8e1, #f3e5f5, #e8eaf6, #ffebee, #f9fbe7
+                );
+                background-size: 400% 400%;
+                background-position: 10% 40%;
+            }
+            
+            /* Transition to soft rainbow */
+            20% { 
+                background: linear-gradient(
+                    135deg,
+                    #ff9a9e, #fecfef, #ffecd2, #fcb69f, #a8edea, #d299c2,
+                    #ffeaa7, #fab1a0, #fd79a8, #fdcb6e, #6c5ce7, #a29bfe,
+                    #fd79a8, #00b894, #e17055, #74b9ff, #fd79a8, #fdcb6e,
+                    #00cec9, #ff7675, #fd79a8, #fdcb6e, #00cec9
+                );
+                background-size: 600% 600%;
+                background-position: 25% 25%;
+            }
+            
+            /* Wild rainbow phase */
+            30% { 
+                background: linear-gradient(
+                    45deg,
+                    #ff0000, #ff4400, #ff8800, #ffcc00, #ffff00, #ccff00, 
+                    #88ff00, #44ff00, #00ff00, #00ff44, #00ff88, #00ffcc,
+                    #00ffff, #00ccff, #0088ff, #0044ff, #0000ff, #4400ff,
+                    #8800ff, #cc00ff, #ff00ff, #ff00cc, #ff0088, #ff0044
+                );
+                background-size: 800% 800%;
+                background-position: 50% 50%;
+            }
+            
+            /* Peak wildness */
+            50% { 
+                background: linear-gradient(
+                    0deg,
+                    #ff1744, #ff6d00, #ffea00, #76ff03, #00e676, #00bcd4,
+                    #2196f3, #3f51b5, #9c27b0, #e91e63, #ff5722, #795548,
+                    #607d8b, #ff9800, #ffc107, #8bc34a, #4caf50, #009688,
+                    #00acc1, #039be5, #1976d2, #303f9f, #512da8, #7b1fa2
+                );
+                background-size: 1000% 1000%;
+                background-position: 100% 100%;
+            }
+            
+            /* Wind down from peak */
+            70% { 
+                background: linear-gradient(
+                    45deg,
+                    #ff0000, #ff4400, #ff8800, #ffcc00, #ffff00, #ccff00, 
+                    #88ff00, #44ff00, #00ff00, #00ff44, #00ff88, #00ffcc,
+                    #00ffff, #00ccff, #0088ff, #0044ff, #0000ff, #4400ff,
+                    #8800ff, #cc00ff, #ff00ff, #ff00cc, #ff0088, #ff0044
+                );
+                background-size: 800% 800%;
+                background-position: 75% 25%;
+            }
+            
+            /* Transition back to soft colors */
+            80% { 
+                background: linear-gradient(
+                    135deg,
+                    #ff9a9e, #fecfef, #ffecd2, #fcb69f, #a8edea, #d299c2,
+                    #ffeaa7, #fab1a0, #fd79a8, #fdcb6e, #6c5ce7, #a29bfe,
+                    #fd79a8, #00b894, #e17055, #74b9ff, #fd79a8, #fdcb6e,
+                    #00cec9, #ff7675, #fd79a8, #fdcb6e, #00cec9
+                );
+                background-size: 600% 600%;
+                background-position: 75% 25%;
+            }
+            
+            /* Transition back to pastels */
+            90% { 
+                background: linear-gradient(
+                    135deg,
+                    #ffebee, #f3e5f5, #e8f5e8, #fff3e0, #f9fbe7, #e3f2fd,
+                    #fce4ec, #f1f8e9, #e0f2f1, #fff8e1, #f3e5f5, #e8eaf6,
+                    #ffebee, #f9fbe7, #e3f2fd, #fce4ec, #f1f8e9, #e0f2f1,
+                    #fff8e1, #f3e5f5, #e8eaf6, #ffebee, #f9fbe7
+                );
+                background-size: 400% 400%;
+                background-position: 90% 60%;
+            }
+            
+            /* Back to calm - matches 0% exactly */
+            100% { 
+                background: linear-gradient(
+                    135deg,
+                    #ffffff, #f0f0f0, #e0e0e0, #f5f5f5, #ffffff, #f8f8f8, 
+                    #e8e8e8, #ffffff, #f2f2f2, #e5e5e5, #ffffff, #f0f0f0,
+                    #e0e0e0, #ffffff, #f5f5f5, #e8e8e8, #f0f0f0, #ffffff,
+                    #f2f2f2, #e5e5e5, #ffffff, #f0f0f0, #e0e0e0
+                );
+                background-size: 300% 300%;
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes subtitleGlow {
+            0% { 
+                filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+            }
+            10% { 
+                filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+            }
+            20% { 
+                filter: drop-shadow(0 0 8px rgba(255, 150, 150, 0.4));
+            }
+            30% { 
+                filter: drop-shadow(0 0 12px rgba(255, 0, 255, 0.6))
+                        drop-shadow(0 0 20px rgba(0, 255, 255, 0.4));
+            }
+            50% { 
+                filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8))
+                        drop-shadow(0 0 30px rgba(0, 255, 0, 0.6))
+                        drop-shadow(0 0 40px rgba(0, 0, 255, 0.4));
+            }
+            70% { 
+                filter: drop-shadow(0 0 12px rgba(255, 0, 255, 0.6))
+                        drop-shadow(0 0 20px rgba(0, 255, 255, 0.4));
+            }
+            80% { 
+                filter: drop-shadow(0 0 8px rgba(255, 150, 150, 0.4));
+            }
+            90% { 
+                filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+            }
+            100% { 
+                filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+            }
+        }
+
+        @keyframes subtitleFloat {
+            0% { 
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+            10% { 
+                transform: translateY(-1px) rotate(0.2deg) scale(1);
+            }
+            20% { 
+                transform: translateY(-2px) rotate(0.5deg) scale(1.01);
+            }
+            30% { 
+                transform: translateY(-4px) rotate(-1deg) scale(1.03);
+            }
+            50% { 
+                transform: translateY(-6px) rotate(1.5deg) scale(1.05);
+            }
+            70% { 
+                transform: translateY(-4px) rotate(-1deg) scale(1.03);
+            }
+            80% { 
+                transform: translateY(-2px) rotate(0.5deg) scale(1.01);
+            }
+            90% { 
+                transform: translateY(-1px) rotate(0.2deg) scale(1);
+            }
+            100% { 
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
         }
 
                 @keyframes titleOrbit {
@@ -750,6 +969,17 @@
                 width: calc(100% - 80px);
             }
             
+            .project-year {
+                position: static !important;
+                transform: none !important;
+                left: auto !important;
+                right: auto !important;
+                display: inline-block;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                font-size: 0.7rem;
+            }
+            
             h1 {
                 font-size: 2rem;
             }
@@ -764,7 +994,10 @@
     <div class="container">
         <header>
             <h1>Portfolio :: Josh Lind</h1>
-            <p class="subtitle">Interactive art installations and creative technology</p>
+            <div class="subtitle-container">
+                <h2 class="subtitle-text">Interactive art installations and creative technology</h2>
+                <p class="subtitle">Interactive art installations and creative technology</p>
+            </div>
         </header>
 
         <div class="timeline" id="timeline">
