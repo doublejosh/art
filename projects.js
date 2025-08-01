@@ -21,7 +21,10 @@ const projects = [
         yearRange: "2023",
         summary: "Part of an immersive walk-through called City of the Future at the Teal Building on Capitol Hill, these posters and lightboxes helped draw guests into the future world of the exhibit. Pieces included advertisements and propaganda from businesses and city government. The work explored classism, utopia/dystopia, and how the future will affect our daily lives.",
         links: [
-            { text: "Instagram", url: "https://www.instagram.com/p/Cs48Z7Zx4Ez/" },
+            { text: "Promo Posters", url: "https://www.instagram.com/p/Cs48Z7Zx4Ez/" },
+            { text: "TramaDroidAll", url: "https://www.instagram.com/p/Cs477UFrXnb/" },
+            { text: "CryoNap", url: "https://www.instagram.com/p/CtA3o6grCFh/" },
+            { text: "Oxygen-- Don't run out.", url: "https://www.instagram.com/p/CtORiQROmlI/" },
             { text: "Website", url: "https://seattlecityofthefuture.com/" }
         ]
     },
@@ -32,7 +35,8 @@ const projects = [
         year: "2023",
         summary: "Signage with universal mechanical gear run by a disco ball motor. Central hub portion shown in video.",
         links: [
-            { text: "Demo video", url: "https://www.dropbox.com/scl/fi/innzeyvax5uou8i2tni9b/2023-03-15-18.05.39.mov?rlkey=75so34f8poyefp0vxf5wxvdp9&st=q7x7ehof&dl=0" }
+            { text: "Demo video", url: "https://www.dropbox.com/scl/fi/innzeyvax5uou8i2tni9b/2023-03-15-18.05.39.mov?rlkey=75so34f8poyefp0vxf5wxvdp9&st=q7x7ehof&dl=0" },
+            { text: "Instagram", url: "https://www.instagram.com/p/Cp1K4fnp19K/" }
         ]
     },
     {
@@ -41,7 +45,9 @@ const projects = [
         type: "Topography in resin",
         year: "2023",
         summary: "Resin and wood sculpture of the Puget Sound topography, including the San Juan Islands and Hood Canal.",
-        noContent: true
+        links: [
+            { text: "Photo", url: "https://www.dropbox.com/scl/fi/ml7c4a15mfp15me28teju/2023-04-14-00.13.50-1.jpg?rlkey=2gjwdys0lpx1fvli41uv44ydt&st=zl1rpmww&dl=0" }
+        ]
     },
     {
         id: "electric-sheep",
@@ -50,7 +56,14 @@ const projects = [
         year: "2023",
         yearRange: "2023-2025",
         summary: "This monthly DJ night features custom posters with an ongoing narrative about the rise and fall of robotic sheep deployed into a future culture.",
-        noContent: true
+        links: [
+            { text: "#18", url: "https://www.instagram.com/p/DJ7lCTvzD_i/" },
+            { text: "#15", url: "https://www.instagram.com/p/DGRlRSKyHlt/" },
+            { text: "#14", url: "https://www.instagram.com/p/DFIfShovNWt/" },
+            { text: "#13", url: "https://www.instagram.com/p/DBMyVL0z7NF/" },
+            { text: "#10", url: "https://www.instagram.com/the_pop_agenda/p/C7NG1q-Sq6P/" },
+            { text: "#8", url: "https://www.instagram.com/the_pop_agenda/p/C4eBQ0WvEJz/" }
+        ]
     },
     {
         id: "flower-sign",
@@ -58,7 +71,9 @@ const projects = [
         type: "Outdoor field marker",
         year: "2023",
         summary: "Wood relief sign made for outdoor flower field to inform visitors of wildflowers.",
-        noContent: true
+        links: [
+            { text: "Photo", url: "https://www.dropbox.com/scl/fi/yyp942neu7mwbd02azebq/2023-12-24-21.50.20.jpg?rlkey=iaxrmcph2pa9391ugzgn9l0k7&st=7oq0g33c&dl=0" }
+        ]
     },
     {
         id: "color-learning-box",
@@ -94,7 +109,10 @@ const projects = [
         type: "interactive lighting",
         year: "2020",
         summary: "Interactive lighting installation with audio EQ responsive effects.",
-        noContent: true
+        links: [
+            { text: "Roof mount", url: "https://www.instagram.com/p/Bp2jY2slYzI/" },
+            { text: "Back yard", url: "https://www.instagram.com/p/BoKX5ivF1ys/" }
+        ]
     },
     {
         id: "youre-on-the-money",
@@ -111,7 +129,8 @@ const projects = [
         year: "2020",
         summary: "Arcade-style slot machine interface with web backend to measure interactions.",
         links: [
-            { text: "Instagram", url: "https://doublejosh.com/post/677646062958346240/fortune-teller-series-and-the-crystal-prediction" }
+            { text: "Photo", url: "https://www.dropbox.com/scl/fi/fgtod0hp2r1e3zekm1tuo/2019-12-13-00.00.57.jpg?rlkey=7vq2hilzhhb7jbou82f4acyme&st=l2n9p3ii&dl=0" },
+            { text: "Series", url: "https://doublejosh.com/post/677646062958346240/fortune-teller-series-and-the-crystal-prediction" }
         ]
     },
     {
@@ -120,7 +139,11 @@ const projects = [
         type: "Animated panel series",
         year: "2020",
         summary: "Backlit coroplast panels to simulate servers racks and data center screens.",
-        noContent: true
+        links : [
+            { text: "Video", url: "hhttps://www.dropbox.com/scl/fi/7e2jzxwo496cjwvg3zpgz/2018-07-02-22.15.37.mov?rlkey=86p2x052aq1x8bwq0gogt4dof&st=ce9b5bqw&dl=0" },
+            { test: "Dual display", url: "https://www.dropbox.com/scl/fi/ccwxzpdkndrkrfcxu9svc/2018-07-11-21.44.07.mov?rlkey=zigx52pwlmhd94y714f4364rw&st=e52bvjkt&dl=0" },
+            { test: "Tech idols", url: "https://www.dropbox.com/scl/fi/3hyvnonlgx475mbd84aqr/2018-06-27-20.35.23-1.jpg?rlkey=64f7zm1zvgc2nj64h8q4dcakn&st=k17gyom9&dl=0" }
+        ]
     },
     {
         id: "shy-bamboo",
@@ -139,8 +162,10 @@ const projects = [
         summary: "This mini food-truck serves snacks and is a mobile DJ booth. The volunteer employees wear 1950s period costumes (hats, bow ties, and aprons) while giving away snacks. This piece has been to numerous PNW outdoor events.",
         links: [
             { text: "Sketches and photos", url: "https://doublejosh.com/post/184371658853/popagenda" },
+            { text: "Seattle Center", url: "https://www.dropbox.com/scl/fi/5gmyd9drgistopzgnsco5/2023-10-08-02.09.29.jpg?rlkey=5z6a0cggaq8agmo2a3o4ggc14&st=od43iccp&dl=0" },
             { text: "popagenda.org", url: "https://popagenda.org/" },
-            { text: "Instagram", url: "https://www.instagram.com/the_pop_agenda/" }
+            { text: "Instagram", url: "https://www.instagram.com/the_pop_agenda/" },
+            { text: "Bag stamping", url: "https://www.dropbox.com/scl/fi/hkjvox27tq1zebjjsgqp1/2024-10-31-00.17.40.jpg?rlkey=cf86ju6d9txp8rnggmam37rlp&st=vtq1pdqj&dl=0" }
         ]
     },
     {
@@ -159,7 +184,12 @@ const projects = [
         title: "Light Skirmish",
         type: "large interactive game",
         year: "2018",
-        summary: "Interactive two-player game comprised of a circular array of wifi-controlled multi-color LED stage lights and two large wireless nautical steering wheels. Players face one another across the circle and must spin their wheel… causing lights to illuminate in a series around the loop. The \"spinning\" lights decrease in speed with the game's goal to stop on the opposing player. This game was built using Wemos Arduino micro-controllers inserted into 24 outdoor 10W/12V LED flood lights, powered by lithium battery packs. Installed at Electric Sky Art Camp and Burien Arts-A-Glow."
+        summary: "Interactive two-player game comprised of a circular array of wifi-controlled multi-color LED stage lights and two large wireless nautical steering wheels. Players face one another across the circle and must spin their wheel… causing lights to illuminate in a series around the loop. The \"spinning\" lights decrease in speed with the game's goal to stop on the opposing player. This game was built using Wemos Arduino micro-controllers inserted into 24 outdoor 10W/12V LED flood lights, powered by lithium battery packs. Installed at Electric Sky Art Camp and Burien Arts-A-Glow.",
+        links: [
+            { text: "Video 1", url: "https://www.dropbox.com/scl/fi/b3xpb3ak011cocd18jcsv/2017-09-09-20.17.22.mov?rlkey=cqo9tws4wh4kepfp1xorclvqv&st=k0fjl7d5&dl=0" },
+            { text: "Color wash", url: "https://www.dropbox.com/scl/fi/mq9s2ecl53b9nzhitg6i8/2017-09-09-20.12.28.mov?rlkey=m3lwn7tbyc7wtqqstwd0mxadu&st=b08bra22&dl=0" },
+            { text: "Video 3", url: "https://www.dropbox.com/scl/fi/dt3bvku0tdxuabypon46h/2017-09-09-20.11.10.mov?rlkey=v5q51n3vpd6hnsljp33cs1io0&st=akyos5sb&dl=0" },
+        ]
     },
     {
         id: "doctrine",
@@ -169,7 +199,8 @@ const projects = [
         summary: "Board game With a theme of cult teachings and outcomes. Players use a set of symbols to acquire members and win.",
         links: [
             { text: "Photos and symbols", url: "https://doublejosh.com/post/180098521733/the-first-artifacts-of-a-new-board-game-about" },
-            { text: "Stamp study", url: "https://doublejosh.com/post/180294573228" }
+            { text: "Stamp study", url: "https://doublejosh.com/post/180294573228" },
+            { text: "Gold on black", url: "https://www.dropbox.com/scl/fi/f6uyp1fmc3732v3texwve/2018-11-29-19.09.34.jpg?rlkey=5tpe7g1lr23i9g20q6wq4yn40&st=2yv2obvt&dl=0" }
         ]
     },
     {
@@ -180,7 +211,8 @@ const projects = [
         yearRange: "2018/19, 2024",
         summary: "An immersive tiny bar experience of a mid-century, un-scale, hotel lobby. This \"roach motel\" features morphing wallpaper, resin poured roach wing chandelier, and a stained wooden bar. The staff are dressed as cockroaches of course. This piece was installed at the Golden Guy Alley for several years in BRC.",
         links: [
-            { text: "Website", url: "https://www.metafaux.com/finalapproachmotel/" }
+            { text: "Website", url: "https://www.metafaux.com/finalapproachmotel/" },
+            { text: "Instagram", url: "https://www.instagram.com/p/B2DfDh5JtLd/" },
         ]
     },
     {
@@ -272,6 +304,16 @@ const projects = [
             { text: "Installed #1", url: "http://www.youtube.com/watch?v=B_QpBHy1OX4" },
             { text: "Installed #2", url: "http://www.youtube.com/watch?v=ka-9o_Phb_I" },
             { text: "GitHub", url: "https://github.com/doublejosh/balloon_arch" }
+        ]
+    },
+    {
+        id: "numbers",
+        title: "Secret Numbers",
+        type: "Lots of secrets hiding in plain sight for the math nerds.",
+        year: "2012",
+        summary: "",
+        links: [
+            { text: "Photo", url: "https://www.dropbox.com/scl/fi/ustpxix157ut1e7qz9br2/2024-04-04-13.12.34.jpg?rlkey=2vq6odo8f9c527hy2453wy5ag&st=qxsuzy7k&dl=0" }
         ]
     },
     {
