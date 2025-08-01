@@ -1,16 +1,6 @@
 // Project data configuration for Josh Lind Art Portfolio
 const projects = [
     {
-        id: "timewarp",
-        title: "TimeWarp",
-        type: "wooden planetary gears",
-        year: "2023",
-        summary: "Signage with universal mechanical gear run by a disco ball motor. Central hub portion shown in video.",
-        links: [
-            { text: "Demo video", url: "https://www.dropbox.com/scl/fi/innzeyvax5uou8i2tni9b/2023-03-15-18.05.39.mov?rlkey=75so34f8poyefp0vxf5wxvdp9&st=q7x7ehof&dl=0" }
-        ]
-    },
-    {
         id: "whiskey-oclock",
         title: "Whiskey O'Clock",
         type: "giant 7-segment display",
@@ -25,7 +15,7 @@ const projects = [
     },
     {
         id: "posters-future",
-        title: "Posters from the Future",
+        title: "City of the Future",
         type: "posters and signage",
         year: "2024",
         yearRange: "2023",
@@ -33,6 +23,16 @@ const projects = [
         links: [
             { text: "Instagram", url: "https://www.instagram.com/p/Cs48Z7Zx4Ez/" },
             { text: "Website", url: "https://seattlecityofthefuture.com/" }
+        ]
+    },
+    {
+        id: "timewarp",
+        title: "TimeWarp Mechanical Sign",
+        type: "wooden planetary gears",
+        year: "2023",
+        summary: "Signage with universal mechanical gear run by a disco ball motor. Central hub portion shown in video.",
+        links: [
+            { text: "Demo video", url: "https://www.dropbox.com/scl/fi/innzeyvax5uou8i2tni9b/2023-03-15-18.05.39.mov?rlkey=75so34f8poyefp0vxf5wxvdp9&st=q7x7ehof&dl=0" }
         ]
     },
     {
@@ -84,13 +84,56 @@ const projects = [
         yearRange: "2020–2021",
         summary: "Based on a classic fortune-telling machine, this installation presents a fortune based on choices and allows the user to vote on the what they received.",
         links: [
-            { text: "More photos and sketches", url: "https://doublejosh.com/post/186006325043/fortune-calibrator" }
+            { text: "Workshop", url: "https://doublejosh.com/post/656637761187627008/fortune-teller-workshop" },
+            { text: "Instagram", url: "https://www.tinkercad.com/things/38c56EhGnLJ-coin-slot" },
         ]
     },
     {
+        id: "upgrade-node",
+        title: "Upgrade node",
+        type: "interactive lighting",
+        year: "2020",
+        summary: "Interactive lighting installation with audio EQ responsive effects.",
+        noContent: true
+    },
+    {
+        id: "youre-on-the-money",
+        title: "You're On the Money",
+        type: "Peep hole reflection engraving",
+        year: "2020",
+        summary: "Reflection-based engraving piece with peep hole viewing mechanism.",
+        noContent: true
+    },
+    {
+        id: "crystal-experiment",
+        title: "Crystal Experiment",
+        type: "arcade machine",
+        year: "2020",
+        summary: "Arcade-style slot machine interface with web backend to measure interactions.",
+        links: [
+            { text: "Instagram", url: "https://doublejosh.com/post/677646062958346240/fortune-teller-series-and-the-crystal-prediction" }
+        ]
+    },
+    {
+        id: "panels-of-futurescape",
+        title: "Panels of Futurescape",
+        type: "Animated panel series",
+        year: "2020",
+        summary: "Backlit coroplast panels to simulate servers racks and data center screens.",
+        noContent: true
+    },
+    {
+        id: "shy-bamboo",
+        title: "Shy Bamboo",
+        type: "interactive lighting",
+        year: "2020",
+        summary: "Interactive lighting installation with responsive addressable light strands elements.",
+        noContent: true
+    },
+    {
         id: "pop-agenda",
-        title: "POP·AGENDA",
-        type: "food truck art car",
+        title: "POPAGENDA",
+        type: "mobile popups",
         year: "2019",
         yearRange: "2019–present",
         summary: "This mini food-truck serves snacks and is a mobile DJ booth. The volunteer employees wear 1950s period costumes (hats, bow ties, and aprons) while giving away snacks. This piece has been to numerous PNW outdoor events.",
@@ -124,7 +167,10 @@ const projects = [
         type: "Board game + stamp pieces",
         year: "2018",
         summary: "Board game With a theme of cult teachings and outcomes. Players use a set of symbols to acquire members and win.",
-        noContent: true
+        links: [
+            { text: "Photos and symbols", url: "https://doublejosh.com/post/180098521733/the-first-artifacts-of-a-new-board-game-about" },
+            { text: "Stamp study", url: "https://doublejosh.com/post/180294573228" }
+        ]
     },
     {
         id: "final-approach-motel",
@@ -164,7 +210,7 @@ const projects = [
     {
         id: "interlocked-earings",
         title: "Interlocked Earings",
-        type: "3D printed jewelry",
+        type: "jewelery",
         year: "2015",
         summary: "3D-printed 20-sided geometric figures interlocked into hanging earrings.",
         noContent: true
@@ -267,5 +313,13 @@ const projects = [
         type: "faux cologne brand",
         year: "2005",
         summary: "A collaboration with an essential scent business owner, it presented a fantastical brand backstory for a custom-made scent. It was an experiment in alternative packaging for an existing product which supposed an ancient grounding in the human sexual response to the cologne. This includes: web presence, brand, cards, retail display, and product packaging."
+    },
+    {
+        id: "tacky-smack",
+        title: "Tacky Smack",
+        type: "Vinyl wall art biz",
+        year: "2005",
+        summary: "Commercial vinyl wall art business venture.",
+        noContent: true
     }
 ];

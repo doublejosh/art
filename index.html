@@ -422,7 +422,7 @@
             max-width: 800px;
             margin: 40px auto;
             padding: 0 0 150px 0;
-            min-height: 4800px;
+            min-height: 5400px;
         }
 
         .timeline::before {
@@ -458,33 +458,39 @@
         }
 
         /* Individual project positioning */
-        .timeline-item:nth-child(1) { top: 0px; }
-        .timeline-item:nth-child(2) { top: 160px; }
-        .timeline-item:nth-child(3) { top: 320px; }
-        .timeline-item:nth-child(4) { top: 480px; }
-        .timeline-item:nth-child(5) { top: 640px; }
-        .timeline-item:nth-child(6) { top: 800px; }
-        .timeline-item:nth-child(7) { top: 960px; }
-        .timeline-item:nth-child(8) { top: 1120px; }
-        .timeline-item:nth-child(9) { top: 1280px; }
-        .timeline-item:nth-child(10) { top: 1440px; }
-        .timeline-item:nth-child(11) { top: 1600px; }
-        .timeline-item:nth-child(12) { top: 1760px; }
-        .timeline-item:nth-child(13) { top: 1920px; }
-        .timeline-item:nth-child(14) { top: 2080px; }
-        .timeline-item:nth-child(15) { top: 2240px; }
-        .timeline-item:nth-child(16) { top: 2400px; }
-        .timeline-item:nth-child(17) { top: 2560px; }
-        .timeline-item:nth-child(18) { top: 2720px; }
-        .timeline-item:nth-child(19) { top: 2880px; }
-        .timeline-item:nth-child(20) { top: 3040px; }
-        .timeline-item:nth-child(21) { top: 3200px; }
-        .timeline-item:nth-child(22) { top: 3360px; }
-        .timeline-item:nth-child(23) { top: 3520px; }
-        .timeline-item:nth-child(24) { top: 3680px; }
-        .timeline-item:nth-child(25) { top: 3840px; }
-        .timeline-item:nth-child(26) { top: 4000px; }
-        .timeline-item:nth-child(27) { top: 4160px; }
+        .timeline-item:nth-child(1) { top: 0px; }        /* 2024 - Whiskey O'Clock */
+        .timeline-item:nth-child(2) { top: 160px; }      /* 2024 - City of the Future */
+        .timeline-item:nth-child(3) { top: 320px; }      /* 2023 - TimeWarp */
+        .timeline-item:nth-child(4) { top: 480px; }      /* 2023 - Puget Sound */
+        .timeline-item:nth-child(5) { top: 640px; }      /* 2023 - Electric Sheep */
+        .timeline-item:nth-child(6) { top: 800px; }      /* 2023 - Flower sign */
+        .timeline-item:nth-child(7) { top: 960px; }      /* 2022 - Color Learning Box */
+        .timeline-item:nth-child(8) { top: 1120px; }     /* 2021 - Potato Man */
+        .timeline-item:nth-child(9) { top: 1280px; }     /* 2020 - Fortune Calibrator */
+        .timeline-item:nth-child(10) { top: 1440px; }    /* 2020 - Upgrade node */
+        .timeline-item:nth-child(11) { top: 1600px; }    /* 2020 - You're On the Money */
+        .timeline-item:nth-child(12) { top: 1760px; }    /* 2020 - Crystal Experiment */
+        .timeline-item:nth-child(13) { top: 1920px; }    /* 2020 - Panels of Futurescape */
+        .timeline-item:nth-child(14) { top: 2080px; }    /* 2020 - Shy Bamboo */
+        .timeline-item:nth-child(15) { top: 2240px; }    /* 2019 - POPAGENDA */
+        .timeline-item:nth-child(16) { top: 2400px; }    /* 2019 - Emmett */
+        .timeline-item:nth-child(17) { top: 2560px; }    /* 2018 - Light Skirmish */
+        .timeline-item:nth-child(18) { top: 2720px; }    /* 2018 - Doctrine */
+        .timeline-item:nth-child(19) { top: 2880px; }    /* 2018 - Final Approach Motel */
+        .timeline-item:nth-child(20) { top: 3040px; }    /* 2016 - Lux Stellate */
+        .timeline-item:nth-child(21) { top: 3200px; }    /* 2016 - Stormbrella */
+        .timeline-item:nth-child(22) { top: 3360px; }    /* 2015 - Interlocked Earings */
+        .timeline-item:nth-child(23) { top: 3520px; }    /* 2015 - Summer Rain */
+        .timeline-item:nth-child(24) { top: 3680px; }    /* 2014 - Sparkle Shoes */
+        .timeline-item:nth-child(25) { top: 3840px; }    /* 2014 - Rain Cloud */
+        .timeline-item:nth-child(26) { top: 4000px; }    /* 2013 - Meteorolumen */
+        .timeline-item:nth-child(27) { top: 4160px; }    /* 2013 - Night Balloons */
+        .timeline-item:nth-child(28) { top: 4320px; }    /* 2011 - Space Cat Vampire */
+        .timeline-item:nth-child(29) { top: 4480px; }    /* 2010 - Steve the Robot */
+        .timeline-item:nth-child(30) { top: 4640px; }    /* 2007 - Radioator */
+        .timeline-item:nth-child(31) { top: 4800px; }    /* 2005 - iheartSEA */
+        .timeline-item:nth-child(32) { top: 4960px; }    /* 2005 - Anthropornography */
+        .timeline-item:nth-child(33) { top: 5120px; }    /* 2005 - Tacky Smack */
 
         .timeline-dot {
             width: 8px;
@@ -1026,6 +1032,9 @@
         // Render projects function
         function renderProjects() {
             const timeline = document.getElementById('timeline');
+            
+            // Clear existing timeline content
+            timeline.innerHTML = '';
             
             projects.forEach(project => {
                 const timelineItem = document.createElement('div');
