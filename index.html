@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio :: Josh Lind</title>
+    <title>Portfolio :: Josh L</title>
     <style>
         * {
             margin: 0;
@@ -1003,13 +1003,21 @@
             .container {
                 padding: 10px;
             }
+            
+            /* Allow subtitle to wrap on mobile */
+            .subtitle-text,
+            .subtitle {
+                white-space: normal;
+                word-wrap: break-word;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Portfolio :: Josh Lind</h1>
+            <h1>Portfolio :: Josh L</h1>
             <div class="subtitle-container">
                 <h2 class="subtitle-text">Interactive art installations and creative technology</h2>
                 <p class="subtitle">Interactive art installations and creative technology</p>
@@ -1098,8 +1106,10 @@
                 
                 // Assemble card
                 card.appendChild(title);
+                card.appendChild(type);
+                card.appendChild(summary);
                 
-                // Add mobile year only on mobile devices
+                // Add mobile year only on mobile devices - after summary
                 if (window.innerWidth <= 768) {
                     const mobileYear = document.createElement('div');
                     mobileYear.className = 'project-year-mobile';
@@ -1107,8 +1117,6 @@
                     card.appendChild(mobileYear);
                 }
                 
-                card.appendChild(type);
-                card.appendChild(summary);
                 if (project.links) {
                     card.appendChild(linksContainer);
                 }
