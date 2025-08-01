@@ -309,7 +309,7 @@ const projects = [
     {
         id: "numbers",
         title: "Secret Numbers",
-        type: "Lots of secrets hiding in plain sight for the math nerds.",
+        type: "math painting",
         year: "2012",
         summary: "",
         links: [
