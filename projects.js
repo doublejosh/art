@@ -33,9 +33,12 @@ const projects = [
         summary: "Part of an immersive walk-through called City of the Future at the Teal Building on Capitol Hill, these posters and lightboxes helped draw guests into the future world of the exhibit. Pieces included advertisements and propaganda from businesses and city government. The work explored classism, utopia/dystopia, and how the future will affect our daily lives.",
         links: [
             { text: "Promo Posters", url: "https://www.instagram.com/p/Cs48Z7Zx4Ez/" },
+            { text: "Seattle Transit", url: "https://www.dropbox.com/scl/fi/kf20zgwuiefch2j00mlmd/2023-05-29-18.37.57.jpg?rlkey=hvpw8h3ubihh2yt8fvrm285d7&st=sqmnoza2&dl=0" },
+            { text: "Light box #1", url: "https://www.dropbox.com/scl/fi/zndnlakxn898w8bmg10hq/2023-06-01-15.57.11.jpg?rlkey=ssgp1wxcfvm5ogxfrds2g528p&st=gfcdicxd&dl=0" },
             { text: "TramaDroidAll", url: "https://www.instagram.com/p/Cs477UFrXnb/" },
             { text: "CryoNap", url: "https://www.instagram.com/p/CtA3o6grCFh/" },
             { text: "Oxygen-- Don't run out.", url: "https://www.instagram.com/p/CtORiQROmlI/" },
+            { text: "Thoughts & Prayers Burger", url: "https://www.dropbox.com/scl/fi/o0m9tvwqy3669k2so0nwy/2023-05-04-19.54.01.png?rlkey=xsl948oy1zb92l8bbk3ipc9bp&st=3iibec0w&dl=0" },
             { text: "Website", url: "https://seattlecityofthefuture.com/" }
         ]
     },
@@ -98,6 +101,16 @@ const projects = [
         ]
     },
     {
+        id: "self-portrait",
+        title: "Doodle portrait",
+        type: "painting",
+        year: "2022",
+        summary: "Doodles with fine pen on canvas.",
+        links: [
+            { text: "Photo", url: "https://www.dropbox.com/scl/fi/z4qz4h3nhxayvcj6w7rs7/2022-03-15-22.22.51.jpg?rlkey=ahcqose2obombmdo0a3p4khw1&st=fwmtm225&dl=0" }
+        ]
+    },
+    {
         id: "fortune-calibrator",
         title: "Fortune Calibrator",
         type: "arcade fortune machine",
@@ -105,9 +118,11 @@ const projects = [
         yearRange: "2020–2021",
         summary: "Based on a classic fortune-telling machine, this installation presents a fortune based on choices and allows the user to vote on the what they received.",
         links: [
+            { text: "Photo", url: "https://www.dropbox.com/scl/fi/j394p9c95kdam9yorpjz7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f666f7274756e6563616c69627261746f722e61707073706f742e636f6d2f6f2f494d475f333534392e6a70673f616c743d6d65646961.jpeg?rlkey=zctlvsn1obhjjlzf8usxsnw7o&st=ixq6nyh3&dl=0" },
             { text: "Web frontend", url: "https://fortunecalibrator.firebaseapp.com" },
             { text: "Workshop", url: "https://doublejosh.com/post/656637761187627008/fortune-teller-workshop" },
-            { text: "Instagram", url: "https://www.tinkercad.com/things/38c56EhGnLJ-coin-slot" },
+            { text: "Coin slot, 3D", url: "https://www.tinkercad.com/things/38c56EhGnLJ-coin-slot" },
+            { text: "Ruxpin", url: "https://www.dropbox.com/scl/fi/a3xbzrejij0ln7ro9jo5m/2022-02-03-13.48.15.mov?rlkey=esq3usc3h3roh77nov35ofrwq&st=s9813cyb&dl=0" }
         ]
     },
     {
@@ -148,8 +163,9 @@ const projects = [
         summary: "Backlit coroplast panels to simulate servers racks and data center screens.",
         links : [
             { text: "Video", url: "hhttps://www.dropbox.com/scl/fi/7e2jzxwo496cjwvg3zpgz/2018-07-02-22.15.37.mov?rlkey=86p2x052aq1x8bwq0gogt4dof&st=ce9b5bqw&dl=0" },
-            { test: "Dual display", url: "https://www.dropbox.com/scl/fi/ccwxzpdkndrkrfcxu9svc/2018-07-11-21.44.07.mov?rlkey=zigx52pwlmhd94y714f4364rw&st=e52bvjkt&dl=0" },
-            { test: "Tech idols", url: "https://www.dropbox.com/scl/fi/3hyvnonlgx475mbd84aqr/2018-06-27-20.35.23-1.jpg?rlkey=64f7zm1zvgc2nj64h8q4dcakn&st=k17gyom9&dl=0" }
+            { text: "Dual display", url: "https://www.dropbox.com/scl/fi/ccwxzpdkndrkrfcxu9svc/2018-07-11-21.44.07.mov?rlkey=zigx52pwlmhd94y714f4364rw&st=e52bvjkt&dl=0" },
+            { text: "Tech idols", url: "https://www.dropbox.com/scl/fi/3hyvnonlgx475mbd84aqr/2018-06-27-20.35.23-1.jpg?rlkey=64f7zm1zvgc2nj64h8q4dcakn&st=k17gyom9&dl=0" },
+            { text: "Static opposites", url: "https://www.dropbox.com/scl/fi/ua1880bk2f4r0548p38or/2022-03-15-22.24.10.jpg?rlkey=a4mtu1sseopiqsrslecu3lkdf&st=cjyw34wu&dl=0" },
         ]
     },
     {
@@ -171,6 +187,7 @@ const projects = [
             { text: "Instagram", url: "https://www.instagram.com/the_pop_agenda/" },
             { text: "Seattle Center", url: "https://www.dropbox.com/scl/fi/5gmyd9drgistopzgnsco5/2023-10-08-02.09.29.jpg?rlkey=5z6a0cggaq8agmo2a3o4ggc14&st=od43iccp&dl=0" },
             { text: "popagenda.org", url: "https://popagenda.org/" },
+            { text: "Stamps", url: "https://www.dropbox.com/scl/fi/fyojepyhm621n61r02pdc/2022-04-14-18.58.49.jpg?rlkey=2n50kaiwafgbx1k9hqykbxz45&st=1dhnx6zp&dl=0" },
             { text: "Bag stamping", url: "https://www.dropbox.com/scl/fi/hkjvox27tq1zebjjsgqp1/2024-10-31-00.17.40.jpg?rlkey=cf86ju6d9txp8rnggmam37rlp&st=vtq1pdqj&dl=0" },
             { text: "Early ideas", url: "https://doublejosh.com/post/184371658853/popagenda" },
         ]
@@ -207,7 +224,7 @@ const projects = [
         links: [
             { text: "Photos and symbols", url: "https://doublejosh.com/post/180098521733/the-first-artifacts-of-a-new-board-game-about" },
             { text: "Stamp study", url: "https://doublejosh.com/post/180294573228" },
-            { text: "Gold on black", url: "https://www.dropbox.com/scl/fi/f6uyp1fmc3732v3texwve/2018-11-29-19.09.34.jpg?rlkey=5tpe7g1lr23i9g20q6wq4yn40&st=2yv2obvt&dl=0" }
+            { text: "Gold on black", url: "https://www.dropbox.com/scl/fi/hl2z6ra0ymoz873ynhkyz/2022-04-12-20.03.12-3.jpg?rlkey=onsq1tvsitctjc0ajl5ed4v4s&st=n1n1n9cr&dl=0" }
         ]
     },
     {
