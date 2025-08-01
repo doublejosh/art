@@ -84,14 +84,6 @@ const projects = [
         noContent: true
     },
     {
-        id: "potato-man",
-        title: "Potato Man",
-        type: "Electronic-organic figurine",
-        year: "2021",
-        summary: "Action figurine of organic and electronic creature made from potatoes and computer parts.",
-        noContent: true
-    },
-    {
         id: "fortune-calibrator",
         title: "Fortune Calibrator",
         type: "arcade fortune machine",
@@ -99,6 +91,7 @@ const projects = [
         yearRange: "2020–2021",
         summary: "Based on a classic fortune-telling machine, this installation presents a fortune based on choices and allows the user to vote on the what they received.",
         links: [
+            { text: "Web frontend", url: "https://fortunecalibrator.firebaseapp.com" },
             { text: "Workshop", url: "https://doublejosh.com/post/656637761187627008/fortune-teller-workshop" },
             { text: "Instagram", url: "https://www.tinkercad.com/things/38c56EhGnLJ-coin-slot" },
         ]
@@ -130,7 +123,8 @@ const projects = [
         summary: "Arcade-style slot machine interface with web backend to measure interactions.",
         links: [
             { text: "Photo", url: "https://www.dropbox.com/scl/fi/fgtod0hp2r1e3zekm1tuo/2019-12-13-00.00.57.jpg?rlkey=7vq2hilzhhb7jbou82f4acyme&st=l2n9p3ii&dl=0" },
-            { text: "Series", url: "https://doublejosh.com/post/677646062958346240/fortune-teller-series-and-the-crystal-prediction" }
+            { text: "Series", url: "https://doublejosh.com/post/677646062958346240/fortune-teller-series-and-the-crystal-prediction" },
+            { text: "Results site", url: "https://crystal-experiment.web.app/"}
         ]
     },
     {

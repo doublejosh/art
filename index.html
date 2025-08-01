@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio :: Josh L</title>
+    <title>doublejosh :: art portfolio</title>
     <style>
         * {
             margin: 0;
@@ -13,956 +13,179 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 50%, #000000 100%);
-            color: #e0e0e0;
+            background: #ffffff;
+            color: #000000;
             min-height: 100vh;
             padding: 20px;
-            overflow-x: hidden;
             line-height: 1.6;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 60% 10%, rgba(255, 255, 255, 0.08) 0%, transparent 30%),
-                radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 35%),
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 100px,
-                    rgba(255, 255, 255, 0.04) 100px,
-                    rgba(255, 255, 255, 0.04) 101px
-                );
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                180deg,
-                transparent 0%,
-                rgba(0, 0, 0, 0.1) 15%,
-                rgba(0, 0, 0, 0.25) 30%,
-                rgba(0, 0, 0, 0.45) 50%,
-                rgba(0, 0, 0, 0.7) 70%,
-                rgba(0, 0, 0, 0.85) 85%,
-                rgba(0, 0, 0, 0.95) 100%
-            );
-            pointer-events: none;
-            z-index: -1;
-            opacity: var(--fade-opacity, 0);
-            transition: opacity 0.1s ease;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 80px;
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.02);
-            position: relative;
-            backdrop-filter: blur(10px);
-        }
-
-        header::before {
-            display: none;
+            margin-bottom: 60px;
+            color: #000000;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 40px;
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            font-weight: 200;
-            letter-spacing: -1px;
-            color: #ffffff;
-            text-transform: none;
-            text-shadow: none;
-            line-height: 1.1;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 400;
+            color: #000000;
         }
-
-        .subtitle-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .subtitle-text {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: #ffffff;
-            font-style: normal;
-            margin-bottom: 0;
-            letter-spacing: 0.8px;
-            text-transform: none;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            position: relative;
-            z-index: 10;
-            display: inline-block;
-            padding: 8px 12px;
-            border-radius: 12px;
-            line-height: 1.2;
-            white-space: nowrap;
+        h1 a {
+            color: #000000;
+            text-decoration: none;
         }
 
         .subtitle {
             font-size: 1.1rem;
-            opacity: 1;
             font-weight: 300;
-            background: linear-gradient(
-                135deg,
-                #ffffff, #f0f0f0, #e0e0e0, #f5f5f5, #ffffff, #f8f8f8, 
-                #e8e8e8, #ffffff, #f2f2f2, #e5e5e5, #ffffff, #f0f0f0,
-                #e0e0e0, #ffffff, #f5f5f5, #e8e8e8, #f0f0f0, #ffffff,
-                #f2f2f2, #e5e5e5, #ffffff, #f0f0f0, #e0e0e0
-            );
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            font-style: normal;
+            color: #666666;
             margin-bottom: 0;
-            letter-spacing: 0.8px;
-            text-transform: none;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            animation: 
-                subtitleCycle 20s ease-in-out infinite,
-                subtitleGlow 20s ease-in-out infinite,
-                subtitleFloat 20s ease-in-out infinite;
-            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: visible;
-            padding: 8px 12px;
-            border-radius: 12px;
-            backdrop-filter: blur(1px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
-            display: inline-block;
-            z-index: 1;
-            line-height: 1.2;
-            white-space: nowrap;
-        }
-
-        .subtitle::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 12px;
-            z-index: -1;
-        }
-
-        @keyframes subtitleCycle {
-            /* Calm phase - grayscale gradient */
-            0% { 
-                background: linear-gradient(
-                    135deg,
-                    #ffffff, #f0f0f0, #e0e0e0, #f5f5f5, #ffffff, #f8f8f8, 
-                    #e8e8e8, #ffffff, #f2f2f2, #e5e5e5, #ffffff, #f0f0f0,
-                    #e0e0e0, #ffffff, #f5f5f5, #e8e8e8, #f0f0f0, #ffffff,
-                    #f2f2f2, #e5e5e5, #ffffff, #f0f0f0, #e0e0e0
-                );
-                background-size: 300% 300%;
-                background-position: 0% 50%;
-            }
-            
-            /* Smooth transition to pastel colors */
-            10% { 
-                background: linear-gradient(
-                    135deg,
-                    #ffebee, #f3e5f5, #e8f5e8, #fff3e0, #f9fbe7, #e3f2fd,
-                    #fce4ec, #f1f8e9, #e0f2f1, #fff8e1, #f3e5f5, #e8eaf6,
-                    #ffebee, #f9fbe7, #e3f2fd, #fce4ec, #f1f8e9, #e0f2f1,
-                    #fff8e1, #f3e5f5, #e8eaf6, #ffebee, #f9fbe7
-                );
-                background-size: 400% 400%;
-                background-position: 10% 40%;
-            }
-            
-            /* Transition to soft rainbow */
-            20% { 
-                background: linear-gradient(
-                    135deg,
-                    #ff9a9e, #fecfef, #ffecd2, #fcb69f, #a8edea, #d299c2,
-                    #ffeaa7, #fab1a0, #fd79a8, #fdcb6e, #6c5ce7, #a29bfe,
-                    #fd79a8, #00b894, #e17055, #74b9ff, #fd79a8, #fdcb6e,
-                    #00cec9, #ff7675, #fd79a8, #fdcb6e, #00cec9
-                );
-                background-size: 600% 600%;
-                background-position: 25% 25%;
-            }
-            
-            /* Wild rainbow phase */
-            30% { 
-                background: linear-gradient(
-                    45deg,
-                    #ff0000, #ff4400, #ff8800, #ffcc00, #ffff00, #ccff00, 
-                    #88ff00, #44ff00, #00ff00, #00ff44, #00ff88, #00ffcc,
-                    #00ffff, #00ccff, #0088ff, #0044ff, #0000ff, #4400ff,
-                    #8800ff, #cc00ff, #ff00ff, #ff00cc, #ff0088, #ff0044
-                );
-                background-size: 800% 800%;
-                background-position: 50% 50%;
-            }
-            
-            /* Peak wildness */
-            50% { 
-                background: linear-gradient(
-                    0deg,
-                    #ff1744, #ff6d00, #ffea00, #76ff03, #00e676, #00bcd4,
-                    #2196f3, #3f51b5, #9c27b0, #e91e63, #ff5722, #795548,
-                    #607d8b, #ff9800, #ffc107, #8bc34a, #4caf50, #009688,
-                    #00acc1, #039be5, #1976d2, #303f9f, #512da8, #7b1fa2
-                );
-                background-size: 1000% 1000%;
-                background-position: 100% 100%;
-            }
-            
-            /* Wind down from peak */
-            70% { 
-                background: linear-gradient(
-                    45deg,
-                    #ff0000, #ff4400, #ff8800, #ffcc00, #ffff00, #ccff00, 
-                    #88ff00, #44ff00, #00ff00, #00ff44, #00ff88, #00ffcc,
-                    #00ffff, #00ccff, #0088ff, #0044ff, #0000ff, #4400ff,
-                    #8800ff, #cc00ff, #ff00ff, #ff00cc, #ff0088, #ff0044
-                );
-                background-size: 800% 800%;
-                background-position: 75% 25%;
-            }
-            
-            /* Transition back to soft colors */
-            80% { 
-                background: linear-gradient(
-                    135deg,
-                    #ff9a9e, #fecfef, #ffecd2, #fcb69f, #a8edea, #d299c2,
-                    #ffeaa7, #fab1a0, #fd79a8, #fdcb6e, #6c5ce7, #a29bfe,
-                    #fd79a8, #00b894, #e17055, #74b9ff, #fd79a8, #fdcb6e,
-                    #00cec9, #ff7675, #fd79a8, #fdcb6e, #00cec9
-                );
-                background-size: 600% 600%;
-                background-position: 75% 25%;
-            }
-            
-            /* Transition back to pastels */
-            90% { 
-                background: linear-gradient(
-                    135deg,
-                    #ffebee, #f3e5f5, #e8f5e8, #fff3e0, #f9fbe7, #e3f2fd,
-                    #fce4ec, #f1f8e9, #e0f2f1, #fff8e1, #f3e5f5, #e8eaf6,
-                    #ffebee, #f9fbe7, #e3f2fd, #fce4ec, #f1f8e9, #e0f2f1,
-                    #fff8e1, #f3e5f5, #e8eaf6, #ffebee, #f9fbe7
-                );
-                background-size: 400% 400%;
-                background-position: 90% 60%;
-            }
-            
-            /* Back to calm - matches 0% exactly */
-            100% { 
-                background: linear-gradient(
-                    135deg,
-                    #ffffff, #f0f0f0, #e0e0e0, #f5f5f5, #ffffff, #f8f8f8, 
-                    #e8e8e8, #ffffff, #f2f2f2, #e5e5e5, #ffffff, #f0f0f0,
-                    #e0e0e0, #ffffff, #f5f5f5, #e8e8e8, #f0f0f0, #ffffff,
-                    #f2f2f2, #e5e5e5, #ffffff, #f0f0f0, #e0e0e0
-                );
-                background-size: 300% 300%;
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes subtitleGlow {
-            0% { 
-                filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
-            }
-            10% { 
-                filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
-            }
-            20% { 
-                filter: drop-shadow(0 0 8px rgba(255, 150, 150, 0.4));
-            }
-            30% { 
-                filter: drop-shadow(0 0 12px rgba(255, 0, 255, 0.6))
-                        drop-shadow(0 0 20px rgba(0, 255, 255, 0.4));
-            }
-            50% { 
-                filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8))
-                        drop-shadow(0 0 30px rgba(0, 255, 0, 0.6))
-                        drop-shadow(0 0 40px rgba(0, 0, 255, 0.4));
-            }
-            70% { 
-                filter: drop-shadow(0 0 12px rgba(255, 0, 255, 0.6))
-                        drop-shadow(0 0 20px rgba(0, 255, 255, 0.4));
-            }
-            80% { 
-                filter: drop-shadow(0 0 8px rgba(255, 150, 150, 0.4));
-            }
-            90% { 
-                filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
-            }
-            100% { 
-                filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
-            }
-        }
-
-        @keyframes subtitleFloat {
-            0% { 
-                transform: translateY(0px) rotate(0deg) scale(1);
-            }
-            10% { 
-                transform: translateY(-1px) rotate(0.2deg) scale(1);
-            }
-            20% { 
-                transform: translateY(-2px) rotate(0.5deg) scale(1.01);
-            }
-            30% { 
-                transform: translateY(-4px) rotate(-1deg) scale(1.03);
-            }
-            50% { 
-                transform: translateY(-6px) rotate(1.5deg) scale(1.05);
-            }
-            70% { 
-                transform: translateY(-4px) rotate(-1deg) scale(1.03);
-            }
-            80% { 
-                transform: translateY(-2px) rotate(0.5deg) scale(1.01);
-            }
-            90% { 
-                transform: translateY(-1px) rotate(0.2deg) scale(1);
-            }
-            100% { 
-                transform: translateY(0px) rotate(0deg) scale(1);
-            }
-        }
-
-                @keyframes titleOrbit {
-            0%, 100% { 
-                transform: translate(0px, 0px) rotate(0deg);
-            }
-            25% { 
-                transform: translate(1px, -2px) rotate(0.5deg);
-            }
-            50% { 
-                transform: translate(-1px, -1px) rotate(0deg);
-            }
-            75% { 
-                transform: translate(-2px, 1px) rotate(-0.5deg);
-            }
-        }
-
-        @keyframes textFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-2px) rotate(0.5deg); }
-            50% { transform: translateY(-1px) rotate(0deg); }
-            75% { transform: translateY(-3px) rotate(-0.5deg); }
-        }
-
-        @keyframes textShimmer {
-            0% { 
-                text-shadow: 
-                    0 0 5px rgba(255, 255, 255, 0.5),
-                    0 0 10px rgba(255, 0, 255, 0.3),
-                    0 0 15px rgba(0, 255, 255, 0.2);
-            }
-            33% { 
-                text-shadow: 
-                    0 0 8px rgba(255, 255, 0, 0.5),
-                    0 0 15px rgba(255, 0, 0, 0.3),
-                    0 0 20px rgba(0, 255, 0, 0.2);
-            }
-            66% { 
-                text-shadow: 
-                    0 0 6px rgba(0, 255, 255, 0.5),
-                    0 0 12px rgba(0, 0, 255, 0.3),
-                    0 0 18px rgba(255, 255, 255, 0.2);
-            }
-            100% { 
-                text-shadow: 
-                    0 0 5px rgba(255, 255, 255, 0.5),
-                    0 0 10px rgba(255, 0, 255, 0.3),
-                    0 0 15px rgba(0, 255, 255, 0.2);
-            }
-        }
-
-        @keyframes shimmerPass {
-            0% { background-position: -200% 0; opacity: 0; }
-            40% { opacity: 0.6; }
-            60% { opacity: 0.6; }
-            100% { background-position: 200% 0; opacity: 0; }
         }
 
         .timeline {
             position: relative;
             max-width: 800px;
             margin: 40px auto;
-            padding: 0 0 150px 0;
-            min-height: 5560px;
+            padding: 0 0 50px 0;
         }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 50%;
+            left: 50px;
             top: 0;
             bottom: 0;
             width: 1px;
-            background: linear-gradient(
-                180deg,
-                rgba(255, 255, 255, 0.3),
-                rgba(255, 255, 255, 0.1),
-                rgba(255, 255, 255, 0.05)
-            );
-            transform: translateX(-50%);
-            box-shadow: 0 0 2px rgba(255, 255, 255, 0.1);
+            background: #e0e0e0;
         }
 
         .timeline-item {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            align-items: center;
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
         }
-
-        .timeline-item:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        /* Individual project positioning */
-        .timeline-item:nth-child(1) { top: 0px; }        /* 2024 - Whiskey O'Clock */
-        .timeline-item:nth-child(2) { top: 160px; }      /* 2024 - City of the Future */
-        .timeline-item:nth-child(3) { top: 320px; }      /* 2023 - TimeWarp */
-        .timeline-item:nth-child(4) { top: 480px; }      /* 2023 - Puget Sound */
-        .timeline-item:nth-child(5) { top: 640px; }      /* 2023 - Electric Sheep */
-        .timeline-item:nth-child(6) { top: 800px; }      /* 2023 - Flower sign */
-        .timeline-item:nth-child(7) { top: 960px; }      /* 2022 - Color Learning Box */
-        .timeline-item:nth-child(8) { top: 1120px; }     /* 2021 - Potato Man */
-        .timeline-item:nth-child(9) { top: 1280px; }     /* 2020 - Fortune Calibrator */
-        .timeline-item:nth-child(10) { top: 1440px; }    /* 2020 - Upgrade node */
-        .timeline-item:nth-child(11) { top: 1600px; }    /* 2020 - You're On the Money */
-        .timeline-item:nth-child(12) { top: 1760px; }    /* 2020 - Crystal Experiment */
-        .timeline-item:nth-child(13) { top: 1920px; }    /* 2020 - Panels of Futurescape */
-        .timeline-item:nth-child(14) { top: 2080px; }    /* 2020 - Shy Bamboo */
-        .timeline-item:nth-child(15) { top: 2240px; }    /* 2019 - POPAGENDA */
-        .timeline-item:nth-child(16) { top: 2400px; }    /* 2019 - Emmett */
-        .timeline-item:nth-child(17) { top: 2560px; }    /* 2018 - Light Skirmish */
-        .timeline-item:nth-child(18) { top: 2720px; }    /* 2018 - Doctrine */
-        .timeline-item:nth-child(19) { top: 2880px; }    /* 2018 - Final Approach Motel */
-        .timeline-item:nth-child(20) { top: 3040px; }    /* 2016 - Lux Stellate */
-        .timeline-item:nth-child(21) { top: 3200px; }    /* 2016 - Stormbrella */
-        .timeline-item:nth-child(22) { top: 3360px; }    /* 2015 - Interlocked Earings */
-        .timeline-item:nth-child(23) { top: 3520px; }    /* 2015 - Summer Rain */
-        .timeline-item:nth-child(24) { top: 3680px; }    /* 2014 - Sparkle Shoes */
-        .timeline-item:nth-child(25) { top: 3840px; }    /* 2014 - Rain Cloud */
-        .timeline-item:nth-child(26) { top: 4000px; }    /* 2013 - Meteorolumen */
-        .timeline-item:nth-child(27) { top: 4160px; }    /* 2013 - Night Balloons */
-        .timeline-item:nth-child(28) { top: 4320px; }    /* 2012 - Secret Numbers */
-        .timeline-item:nth-child(29) { top: 4480px; }    /* 2011 - Space Cat Vampire */
-        .timeline-item:nth-child(30) { top: 4640px; }    /* 2010 - Steve the Robot */
-        .timeline-item:nth-child(31) { top: 4800px; }    /* 2007 - Radioator */
-        .timeline-item:nth-child(32) { top: 4960px; }    /* 2005 - iheartSEA */
-        .timeline-item:nth-child(33) { top: 5120px; }    /* 2005 - Anthropornography */
-        .timeline-item:nth-child(34) { top: 5280px; }    /* 2005 - Tacky Smack */
 
         .timeline-dot {
             width: 8px;
             height: 8px;
-            background: #0a0a0a;
-            border: 2px solid #ffffff;
+            background: #000000;
             border-radius: 50%;
             position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-        }
-
-        /* Dynamic dot sizing based on content richness */
-        .timeline-dot.dot-small {
-            width: 6px;
-            height: 6px;
-            border-width: 1px;
-        }
-
-        .timeline-dot.dot-medium {
-            width: 8px;
-            height: 8px;
-            border-width: 2px;
-        }
-
-        .timeline-dot.dot-large {
-            width: 10px;
-            height: 10px;
-            border-width: 2px;
-        }
-
-        .timeline-dot.dot-xlarge {
-            width: 12px;
-            height: 12px;
-            border-width: 2px;
-        }
-
-        .timeline-dot:hover {
-            transform: translate(-50%, -50%) scale(1.2);
-            transform-origin: center;
-            background: #ffffff;
-            border-color: #ffffff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-        }
-
-        .timeline-dot.has-links {
-            background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff);
-            background-size: 200% 200%;
-            animation: 
-                dotPulsate 2s ease-in-out infinite,
-                dotShimmer 3s linear infinite,
-                dotGlow 1.5s ease-in-out infinite alternate;
-            box-shadow: 
-                0 0 8px rgba(255, 255, 255, 0.6),
-                0 0 15px rgba(255, 255, 255, 0.4),
-                inset 0 1px 2px rgba(255, 255, 255, 0.8);
-            border-color: rgba(255, 255, 255, 0.9);
-            overflow: hidden;
-        }
-
-        .timeline-dot.has-links::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent,
-                rgba(255, 255, 255, 0.3),
-                transparent
-            );
-            transform: rotate(45deg);
-            animation: dotSweep 2.5s linear infinite;
-        }
-
-        .timeline-dot.has-links:hover {
-            background: linear-gradient(45deg, #ffffff, #f8f8f8, #ffffff);
-            border-color: #ffffff;
-            box-shadow: 
-                0 0 25px rgba(255, 255, 255, 0.8),
-                0 0 35px rgba(255, 255, 255, 0.6),
-                0 0 45px rgba(255, 255, 255, 0.4),
-                inset 0 1px 3px rgba(255, 255, 255, 0.9);
-            animation: 
-                dotPulsate 1.5s ease-in-out infinite,
-                dotShimmer 2s linear infinite,
-                dotGlow 1s ease-in-out infinite alternate;
-        }
-
-        @keyframes dotPulsate {
-            0%, 100% { 
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% { 
-                transform: translate(-50%, -50%) scale(1.05);
-            }
-        }
-
-        @keyframes dotShimmer {
-            0% { 
-                background-position: 0% 50%;
-            }
-            50% { 
-                background-position: 100% 50%;
-            }
-            100% { 
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes dotGlow {
-            0% {
-                box-shadow: 
-                    0 0 8px rgba(255, 255, 255, 0.6),
-                    0 0 15px rgba(255, 255, 255, 0.4),
-                    inset 0 1px 2px rgba(255, 255, 255, 0.8);
-            }
-            100% {
-                box-shadow: 
-                    0 0 12px rgba(255, 255, 255, 0.7),
-                    0 0 20px rgba(255, 255, 255, 0.5),
-                    inset 0 1px 2px rgba(255, 255, 255, 0.9);
-            }
-        }
-
-        @keyframes dotSweep {
-            0% {
-                transform: rotate(45deg) translateX(-100%);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: rotate(45deg) translateX(100%);
-                opacity: 0;
-            }
-        }
-
-        @keyframes titleOrbit {
-            0%, 100% { 
-                transform: translate(0px, 0px) rotate(0deg);
-            }
-            25% { 
-                transform: translate(1px, -2px) rotate(0.5deg);
-            }
-            50% { 
-                transform: translate(-1px, -1px) rotate(0deg);
-            }
-            75% { 
-                transform: translate(-2px, 1px) rotate(-0.5deg);
-            }
-        }
-
-        @keyframes typeOrbit {
-            0%, 100% { 
-                transform: translate(0px, 0px);
-            }
-            33% { 
-                transform: translate(-1px, 1px);
-            }
-            66% { 
-                transform: translate(1px, -1px);
-            }
-        }
-
-        @keyframes yearOrbit {
-            0%, 100% { 
-                transform: translateY(-50%) translate(0px, 0px) rotate(0deg);
-            }
-            20% { 
-                transform: translateY(-50%) translate(2px, -1px) rotate(0.3deg);
-            }
-            40% { 
-                transform: translateY(-50%) translate(1px, 2px) rotate(-0.2deg);
-            }
-            60% { 
-                transform: translateY(-50%) translate(-2px, 1px) rotate(0.4deg);
-            }
-            80% { 
-                transform: translateY(-50%) translate(-1px, -2px) rotate(-0.3deg);
-            }
-        }
-
-        /* Connection lines from dots to cards */
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.2);
-            top: 50%;
-            z-index: 5;
-            transition: all 0.3s ease;
-            box-shadow: none;
-        }
-
-        .timeline-item:nth-child(odd)::after {
-            left: calc(50% + 12px);
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: calc(50% - 52px);
-        }
-
-        .timeline-item:hover::after {
-            background: rgba(255, 255, 255, 0.4);
-            width: 50px;
-            box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+            left: 46px;
+            top: 8px;
         }
 
         .project-card {
-            background: transparent;
-            border-radius: 0;
-            padding: 20px;
-            box-shadow: none;
-            transition: all 0.3s ease;
+            background: #ffffff;
             border: none;
-            position: relative;
-            overflow: hidden;
-            min-width: 200px;
-            max-width: 380px;
-            width: auto;
-            height: auto;
-            min-height: 80px;
-            cursor: pointer;
-            margin: 0 50px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInCard 0.6s ease-out forwards;
-        }
-
-        @keyframes fadeInCard {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .timeline-item:nth-child(odd) .project-card {
-            margin-left: 60px;
-            margin-right: 0;
-        }
-
-        .timeline-item:nth-child(even) .project-card {
-            margin-right: 60px;
-            margin-left: 0;
-        }
-
-        .project-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            z-index: 50;
-            backdrop-filter: blur(10px);
-        }
-
-        .project-card::before {
-            display: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
         }
 
         .project-title {
             font-size: 1.3rem;
-            font-weight: 400;
-            color: #ffffff;
-            margin-bottom: 8px;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 4px;
             line-height: 1.3;
-            text-transform: none;
-            letter-spacing: 0.3px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            position: relative;
-            text-shadow: none;
-            animation: titleOrbit 12s ease-in-out infinite;
         }
 
         .project-type {
-            display: block;
-            color: #aaaaaa;
-            padding: 0;
-            border: none;
-            background: none;
+            color: #666666;
             font-size: 0.85rem;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             font-weight: 300;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-style: normal;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            animation: typeOrbit 8s ease-in-out infinite;
+            letter-spacing: 0.5px;
         }
 
         .project-year {
             color: #999999;
             font-weight: 300;
-            font-size: 0.75rem;
-            margin-bottom: 0;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            text-transform: none;
-            letter-spacing: 0.5px;
-            background: #0a0a0a;
-            padding: 3px 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            z-index: 20;
-            white-space: nowrap;
-            font-style: normal;
-            animation: yearOrbit 15s ease-in-out infinite;
-        }
-
-        .project-year-mobile {
-            color: #999999;
-            font-weight: 300;
             font-size: 0.8rem;
-            margin-top: 6px;
             margin-bottom: 8px;
-            margin-left: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            text-transform: none;
-            letter-spacing: 0.5px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 4px 8px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            width: fit-content;
-        }
-
-        .timeline-item:nth-child(odd) .project-year {
-            left: calc(50% + 20px);
-        }
-
-        .timeline-item:nth-child(even) .project-year {
-            right: calc(50% + 20px);
         }
 
         .project-summary {
-            display: none;
-            color: #c8c8c8;
+            color: #333333;
             line-height: 1.5;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-size: 0.9rem;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .project-card:hover .project-summary {
-            display: block;
         }
 
         .project-links {
-            display: none;
-        }
-
-        .project-card:hover .project-links {
-            display: block;
-        }
-
-        .project-card:hover .project-links a {
-            font-size: 0.7rem;
-            padding: 4px 10px;
-            margin: 3px 6px 3px 0;
+            margin-top: 8px;
         }
 
         .project-links a {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            padding: 8px 16px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            margin: 6px 10px 6px 0;
-            transition: all 0.3s ease;
-            font-weight: 300;
-            text-transform: none;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            letter-spacing: 0.3px;
-            backdrop-filter: blur(10px);
+            display: inline;
+            color: #4a90e2;
+            text-decoration: underline;
+            font-size: 0.85rem;
+            margin-right: 12px;
         }
 
         .project-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+            color: #357abd;
+            text-decoration: none;
         }
 
         .no-content {
-            color: #666;
+            color: #999999;
             font-style: italic;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .stats {
-            background: rgba(255, 255, 255, 0.02);
+            background: #f9f9f9;
             padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
+            border: 1px solid #e0e0e0;
             text-align: center;
-            margin-bottom: 60px;
-            color: #c8c8c8;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            text-transform: none;
-            letter-spacing: 0.5px;
-            box-shadow: none;
-            position: relative;
-            backdrop-filter: blur(10px);
-        }
-
-        .stats::before {
-            display: none;
+            margin-bottom: 40px;
+            color: #666666;
         }
 
         .stats h3 {
             margin-bottom: 0;
-            text-shadow: none;
-            font-weight: 300;
+            font-weight: 400;
             font-size: 1rem;
-            font-style: normal;
         }
 
         .thank-you {
             text-align: center;
-            padding: 40px 30px;
-            margin-top: 80px;
-            margin-bottom: 100px;
-            color: #c8c8c8;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
-            box-shadow: none;
-            position: relative;
+            padding: 40px 20px;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            color: #666666;
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            backdrop-filter: blur(10px);
-        }
-
-        .thank-you::before {
-            display: none;
         }
 
         .thank-you h3 {
-            color: #ffffff;
-            text-transform: none;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-            text-shadow: none;
-            font-size: 1.5rem;
-            font-weight: 300;
+            color: #000000;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 400;
         }
 
         .thank-you p {
             line-height: 1.6;
-            opacity: 0.8;
-            font-size: 1rem;
-            text-transform: none;
-            letter-spacing: 0.3px;
-            margin-bottom: 10px;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
             font-weight: 300;
         }
 
@@ -972,29 +195,11 @@
             }
             
             .timeline-item {
-                flex-direction: row !important;
-            }
-            
-            .timeline-item:nth-child(even) {
-                flex-direction: row !important;
+                padding-left: 60px;
             }
             
             .timeline-dot {
-                left: 30px;
-            }
-            
-            .project-card {
-                margin-left: 60px !important;
-                margin-right: 0 !important;
-                width: calc(100% - 80px);
-            }
-            
-            .project-card:hover {
-                width: calc(100% - 80px);
-            }
-            
-            .project-year {
-                display: none;
+                left: 26px;
             }
             
             h1 {
@@ -1004,25 +209,20 @@
             .container {
                 padding: 10px;
             }
-            
-            /* Allow subtitle to wrap on mobile */
-            .subtitle-text,
-            .subtitle {
-                white-space: normal;
-                word-wrap: break-word;
-                max-width: 100%;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Portfolio :: Josh L</h1>
-            <div class="subtitle-container">
-                <h2 class="subtitle-text">Interactive art installations and creative technology</h2>
-                <p class="subtitle">Interactive art installations and creative technology</p>
-            </div>
+            <h1>
+                <a href="https://doublejosh.com/">-✁-- doublejosh ---</a>
+            </h1>
+            <p class="subtitle">
+                Interactive art installations and creative technology.
+                <br />
+                From Washington state 1982, now on Camano Island.
+            </p>
         </header>
 
         <div class="timeline" id="timeline">
@@ -1048,33 +248,19 @@
             projects.forEach(project => {
                 const timelineItem = document.createElement('div');
                 timelineItem.className = 'timeline-item';
-                timelineItem.setAttribute('data-year', project.year);
                 
-                // Calculate content richness for dot sizing
-                const contentScore = calculateContentScore(project);
-                const dotSize = getDotSizeClass(contentScore);
-                
-                // Create timeline dot with dynamic size
+                // Create timeline dot
                 const dot = document.createElement('div');
-                dot.className = `timeline-dot ${dotSize}`;
+                dot.className = 'timeline-dot';
                 
-                // Add has-links class if project has links
-                if (project.links && project.links.length > 0) {
-                    dot.classList.add('has-links');
-                }
-                
-                // Create project year display on timeline
-                const yearDisplay = document.createElement('div');
-                yearDisplay.className = 'project-year';
-                yearDisplay.textContent = project.yearRange || project.year;
-                
-                // Create project card (no size class needed - auto-sizing)
+                // Create project card
                 const card = document.createElement('div');
                 card.className = 'project-card';
                 
-                // Add staggered animation delay
-                const index = projects.indexOf(project);
-                card.style.animationDelay = `${index * 0.1}s`;
+                // Project year
+                const year = document.createElement('div');
+                year.className = 'project-year';
+                year.textContent = project.yearRange || project.year;
                 
                 // Project title
                 const title = document.createElement('h2');
@@ -1089,7 +275,7 @@
                 // Project summary
                 const summary = document.createElement('p');
                 summary.className = project.noContent ? 'project-summary no-content' : 'project-summary';
-                summary.textContent = project.summary;
+                summary.textContent = project.summary || 'No description available.';
                 
                 // Project links
                 const linksContainer = document.createElement('div');
@@ -1106,25 +292,17 @@
                 }
                 
                 // Assemble card
+                card.appendChild(year);
                 card.appendChild(title);
                 card.appendChild(type);
                 card.appendChild(summary);
                 
-                // Add mobile year only on mobile devices - after summary
-                if (window.innerWidth <= 768) {
-                    const mobileYear = document.createElement('div');
-                    mobileYear.className = 'project-year-mobile';
-                    mobileYear.textContent = project.yearRange || project.year;
-                    card.appendChild(mobileYear);
-                }
-                
-                if (project.links) {
+                if (project.links && project.links.length > 0) {
                     card.appendChild(linksContainer);
                 }
                 
                 // Assemble timeline item
                 timelineItem.appendChild(dot);
-                timelineItem.appendChild(yearDisplay);
                 timelineItem.appendChild(card);
                 
                 // Add to timeline
@@ -1132,68 +310,10 @@
             });
         }
 
-        // Calculate content richness score
-        function calculateContentScore(project) {
-            let score = 0;
-            
-            // Base score for having content
-            if (!project.noContent) score += 10;
-            
-            // Summary length contribution
-            if (project.summary) {
-                if (project.summary.length > 200) score += 30;
-                else if (project.summary.length > 100) score += 20;
-                else if (project.summary.length > 50) score += 10;
-            }
-            
-            // Links contribution
-            if (project.links) {
-                score += project.links.length * 8;
-            }
-            
-            // Year range complexity
-            if (project.yearRange && project.yearRange !== project.year) {
-                score += 5;
-            }
-            
-            return score;
-        }
-
-        // Convert content score to dot size class
-        function getDotSizeClass(score) {
-            if (score >= 40) return 'dot-xlarge';
-            if (score >= 25) return 'dot-large';
-            if (score >= 15) return 'dot-medium';
-            return 'dot-small';
-        }
-
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             renderProjects();
-            handleScrollFade();
         });
-
-        // Handle scroll-based fade effect
-        function handleScrollFade() {
-            function updateFade() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercent = Math.min(scrollTop / documentHeight, 1);
-                
-                // Apply fade effect to body::after pseudo-element
-                const fadeOpacity = scrollPercent * 0.8; // Max opacity of 0.8
-                document.body.style.setProperty('--scroll-fade', fadeOpacity);
-                
-                // Update CSS custom property for the fade effect
-                document.documentElement.style.setProperty('--fade-opacity', fadeOpacity);
-            }
-
-            // Update on scroll
-            window.addEventListener('scroll', updateFade);
-            
-            // Initial update
-            updateFade();
-        }
     </script>
 </body>
 </html>
