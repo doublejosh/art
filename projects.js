@@ -101,16 +101,6 @@ const projects = [
         ]
     },
     {
-        id: "self-portrait",
-        title: "Doodle portrait",
-        type: "painting",
-        year: "2022",
-        summary: "Doodles with fine pen on canvas.",
-        links: [
-            { text: "Photo", url: "https://www.dropbox.com/scl/fi/z4qz4h3nhxayvcj6w7rs7/2022-03-15-22.22.51.jpg?rlkey=ahcqose2obombmdo0a3p4khw1&st=fwmtm225&dl=0" }
-        ]
-    },
-    {
         id: "fortune-calibrator",
         title: "Fortune Calibrator",
         type: "arcade fortune machine",
@@ -261,6 +251,16 @@ const projects = [
         links: [
             { text: "GitHub code", url: "https://github.com/doublejosh/stormbrella" },
             { text: "Video", url: "https://www.youtube.com/watch?v=DrYusomXhdg" }
+        ]
+    },
+    {
+        id: "self-portrait",
+        title: "Doodle portrait",
+        type: "painting",
+        year: "2016",
+        summary: "Doodles with fine pen on canvas.",
+        links: [
+            { text: "Photo", url: "https://www.dropbox.com/scl/fi/z4qz4h3nhxayvcj6w7rs7/2022-03-15-22.22.51.jpg?rlkey=ahcqose2obombmdo0a3p4khw1&st=fwmtm225&dl=0" }
         ]
     },
     {
