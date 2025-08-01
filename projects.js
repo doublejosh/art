@@ -14,6 +14,17 @@ const projects = [
         ]
     },
     {
+        id: "bumper-sticker-club",
+        title: "Bumper Sticker Club",
+        type: "survey-driven sticker project",
+        year: "2023",
+        yearRange: "2023–present",
+        summary: "Stickers created by running surveys on hundreds of brainstormed phrases.",
+        links: [
+            { text: "Website", url: "https://bumperclub.popagenda.org/" }
+        ]
+    },
+    {
         id: "posters-future",
         title: "City of the Future",
         type: "posters and signage",
@@ -30,13 +41,13 @@ const projects = [
     },
     {
         id: "timewarp",
-        title: "TimeWarp Mechanical Sign",
+        title: "TimeWarp",
         type: "wooden planetary gears",
         year: "2023",
-        summary: "Signage with universal mechanical gear run by a disco ball motor. Central hub portion shown in video.",
+        summary: "Signage prototype with universal mechanical gear run by a disco ball motor. Central hub portion shown in video.",
         links: [
-            { text: "Demo video", url: "https://www.dropbox.com/scl/fi/innzeyvax5uou8i2tni9b/2023-03-15-18.05.39.mov?rlkey=75so34f8poyefp0vxf5wxvdp9&st=q7x7ehof&dl=0" },
-            { text: "Instagram", url: "https://www.instagram.com/p/Cp1K4fnp19K/" }
+            { text: "Internal gears", url: "https://www.dropbox.com/scl/fi/innzeyvax5uou8i2tni9b/2023-03-15-18.05.39.mov?rlkey=75so34f8poyefp0vxf5wxvdp9&st=q7x7ehof&dl=0" },
+            { text: "Spiral", url: "https://www.instagram.com/p/Cp1K4fnp19K/" }
         ]
     },
     {
@@ -54,7 +65,7 @@ const projects = [
         title: "Electric Sheep",
         type: "DJ night posters x18",
         year: "2023",
-        yearRange: "2023-2025",
+        yearRange: "2023–present",
         summary: "This monthly DJ night features custom posters with an ongoing narrative about the rise and fall of robotic sheep deployed into a future culture.",
         links: [
             { text: "#18", url: "https://www.instagram.com/p/DJ7lCTvzD_i/" },
@@ -81,7 +92,10 @@ const projects = [
         type: "interactive toy",
         year: "2022",
         summary: "Child's toy with lights, buttons, and sounds to teach an infant their colors.",
-        noContent: true
+        links: [
+            { text: "Demo video", url: "https://www.dropbox.com/scl/fi/tuyp99jez7ld7c4d3gt6t/2022-11-28-12.52.29.mov?rlkey=x3x3gtipsa1g5o1eft1c6t9yf&st=ro2cyyjf&dl=0" },
+            { text: "Insides", url: "https://www.dropbox.com/scl/fi/g2cg20k9cy9n25pxj874s/2022-11-27-23.02.09.jpg?rlkey=5gmfnf9d7bxcwhv2lukeouqwd&st=5nvlsvc1&dl=0" }
+        ]
     },
     {
         id: "fortune-calibrator",
@@ -112,8 +126,7 @@ const projects = [
         title: "You're On the Money",
         type: "Peep hole reflection engraving",
         year: "2020",
-        summary: "Reflection-based engraving piece with peep hole viewing mechanism.",
-        noContent: true
+        summary: "Reflection-based engraving piece with peep hole viewing mechanism."
     },
     {
         id: "crystal-experiment",
@@ -144,8 +157,7 @@ const projects = [
         title: "Shy Bamboo",
         type: "interactive lighting",
         year: "2020",
-        summary: "Interactive lighting installation with responsive addressable light strands elements.",
-        noContent: true
+        summary: "Interactive lighting installation with responsive addressable light strands elements."
     },
     {
         id: "pop-agenda",
@@ -153,13 +165,14 @@ const projects = [
         type: "mobile popups",
         year: "2019",
         yearRange: "2019–present",
-        summary: "This mini food-truck serves snacks and is a mobile DJ booth. The volunteer employees wear 1950s period costumes (hats, bow ties, and aprons) while giving away snacks. This piece has been to numerous PNW outdoor events.",
+        summary: "This mini food-truck serves snacks and mobile music performance. Staff wear period costumes (hats, bow ties, aprons) while in character giving away snacks. Puppets are involved. This piece has been to numerous PNW outdoor events.",
         links: [
-            { text: "Sketches and photos", url: "https://doublejosh.com/post/184371658853/popagenda" },
+            { text: "Recent photo", url: "https://www.dropbox.com/scl/fi/m8li80o4q061d0sz0tnhf/ACDBCF90-0F67-4551-8FCA-1AD4C5C23E12_1_105_c.JPG?rlkey=w6npli80mxvicd7wosvyynpgh&dl=0" },
+            { text: "Instagram", url: "https://www.instagram.com/the_pop_agenda/" },
             { text: "Seattle Center", url: "https://www.dropbox.com/scl/fi/5gmyd9drgistopzgnsco5/2023-10-08-02.09.29.jpg?rlkey=5z6a0cggaq8agmo2a3o4ggc14&st=od43iccp&dl=0" },
             { text: "popagenda.org", url: "https://popagenda.org/" },
-            { text: "Instagram", url: "https://www.instagram.com/the_pop_agenda/" },
-            { text: "Bag stamping", url: "https://www.dropbox.com/scl/fi/hkjvox27tq1zebjjsgqp1/2024-10-31-00.17.40.jpg?rlkey=cf86ju6d9txp8rnggmam37rlp&st=vtq1pdqj&dl=0" }
+            { text: "Bag stamping", url: "https://www.dropbox.com/scl/fi/hkjvox27tq1zebjjsgqp1/2024-10-31-00.17.40.jpg?rlkey=cf86ju6d9txp8rnggmam37rlp&st=vtq1pdqj&dl=0" },
+            { text: "Early ideas", url: "https://doublejosh.com/post/184371658853/popagenda" },
         ]
     },
     {
@@ -238,8 +251,7 @@ const projects = [
         title: "Interlocked Earings",
         type: "jewelery",
         year: "2015",
-        summary: "3D-printed 20-sided geometric figures interlocked into hanging earrings.",
-        noContent: true
+        summary: "3D-printed 20-sided geometric figures interlocked into hanging earrings."
     },
     {
         id: "summer-rain",
@@ -316,8 +328,7 @@ const projects = [
         type: "Board game",
         year: "2011",
         yearRange: "2011-2018",
-        summary: "Board game depicting planets and spaceships with resource trading. The theme was cats and vampires.",
-        noContent: true
+        summary: "Board game depicting planets and spaceships with resource trading. The theme was cats and vampires."
     },
     {
         id: "steve-robot",
@@ -355,7 +366,6 @@ const projects = [
         title: "Tacky Smack",
         type: "Vinyl wall art biz",
         year: "2005",
-        summary: "Commercial vinyl wall art business venture.",
-        noContent: true
+        summary: "Commercial vinyl wall art business venture."
     }
 ];
