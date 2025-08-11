@@ -324,8 +324,9 @@ const projects = [
         year: "2013",
         summary: "A string of balloon lanterns, each with a microchipped RGB LED bulb, making them controllable inflatable light bulbs synchronized from an Arduino processor on the ground. The light patterns and simulated motion is done via phone/ethernet cords and connection terminals. This piece has been setup with helium as single vertical chain as well as in a 3D geometric (tetrahedron) array.",
         links: [
-            { text: "Installed #1", url: "http://www.youtube.com/watch?v=B_QpBHy1OX4" },
-            { text: "Installed #2", url: "http://www.youtube.com/watch?v=ka-9o_Phb_I" },
+            { text: "Photo", url: "https://www.dropbox.com/scl/fi/0smye5jlfzi1h9p6s3e5i/2016-01-26-16.13.55.jpg?rlkey=ovp1azv6bwtjcih19rd3c0swt&st=tvx2ykkx&dl=0" },
+            { text: "Video #1", url: "http://www.youtube.com/watch?v=B_QpBHy1OX4" },
+            { text: "Video #2", url: "http://www.youtube.com/watch?v=ka-9o_Phb_I" },
             { text: "GitHub", url: "https://github.com/doublejosh/balloon_arch" }
         ]
     },
