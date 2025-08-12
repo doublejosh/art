@@ -116,17 +116,6 @@ const projects = [
         ]
     },
     {
-        id: "upgrade-node",
-        title: "Upgrade node",
-        type: "interactive lighting",
-        year: "2020",
-        summary: "Interactive lighting installation with audio EQ responsive effects.",
-        links: [
-            { text: "Roof mount", url: "https://www.instagram.com/p/Bp2jY2slYzI/" },
-            { text: "Back yard", url: "https://www.instagram.com/p/BoKX5ivF1ys/" }
-        ]
-    },
-    {
         id: "youre-on-the-money",
         title: "You're On the Money",
         type: "Peep hole reflection engraving",
