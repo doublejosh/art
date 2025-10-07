@@ -172,14 +172,15 @@ const projects = [
         ]
     },
     {
-        id: "emmett",
-        title: "Emmett",
-        type: "open-source hover board",
+        id: "final-approach-motel",
+        title: "Final Approach Motel",
+        type: "popup tiny bar",
         year: "2019",
-        summary: "This was my effort to create a DIY one-wheel, self-balancing, electric skateboard. As the project progressed it became obvious this should be open-sourced. I was able to achieve decent accelerometer control and dealt with battery management, but got stuck handling the throttles of brushless electric motor controllers. I'd love to reboot this someday.",
+        yearRange: "2018, 2024",
+        summary: "An immersive tiny bar experience of a mid-century, un-scale, hotel lobby. This \"roach motel\" features morphing wallpaper, resin poured roach wing chandelier, and a stained wooden bar. The staff are dressed as cockroaches of course. This piece was installed at the Golden Guy Alley for several years in BRC.",
         links: [
-            { text: "Blog", url: "https://openemmett.tumblr.com/" },
-            { text: "Instructions wiki", url: "https://github.com/doublejosh/emmett/wiki" }
+            { text: "Website", url: "https://www.metafaux.com/finalapproachmotel/" },
+            { text: "Instagram", url: "https://www.instagram.com/p/B2DfDh5JtLd/" },
         ]
     },
     {
@@ -207,15 +208,15 @@ const projects = [
         ]
     },
     {
-        id: "final-approach-motel",
-        title: "Final Approach Motel",
-        type: "popup tiny bar",
+        id: "upgrade-node",
+        title: "Upgrade Node",
+        type: "video",
         year: "2018",
-        yearRange: "2018/19, 2024",
-        summary: "An immersive tiny bar experience of a mid-century, un-scale, hotel lobby. This \"roach motel\" features morphing wallpaper, resin poured roach wing chandelier, and a stained wooden bar. The staff are dressed as cockroaches of course. This piece was installed at the Golden Guy Alley for several years in BRC.",
+        summary: "Programmable lights with large effect using cheap materials (conduit, coroplast, foam). Pieces were assembled at various events near Seattle.",
         links: [
-            { text: "Website", url: "https://www.metafaux.com/finalapproachmotel/" },
-            { text: "Instagram", url: "https://www.instagram.com/p/B2DfDh5JtLd/" },
+            { text: "Sign with reactive EQ", url: "https://www.dropbox.com/scl/fi/upgcqqkr9w5fsch6q56ri/2018-12-14-00.09.44.mov?rlkey=c5guafyolg0uvi8voffriy5m1&st=8as6npui&dl=0" },
+            { text: "Panels video", url: "https://www.dropbox.com/scl/fi/ccwxzpdkndrkrfcxu9svc/2018-07-11-21.44.07.mov?rlkey=zigx52pwlmhd94y714f4364rw&st=niaza35p&dl=0" },
+            { text: "Instagram", url: "https://www.instagram.com/p/Bp2jY2slYzIHhpBcR2msMvHyklOBqPwUsDd-Nw0/" }
         ]
     },
     {
@@ -229,6 +230,17 @@ const projects = [
             { text: "Photo 1", url: "http://f.cl.ly/items/28222V0w1W1W2e2T1S07/MEB_20140906_394.jpg" },
             { text: "Photo 2", url: "http://cl.ly/image/041P312y2i3i/140906205535_0487.jpg" },
             { text: "Photo 3", url: "https://flic.kr/p/pmunLk" }
+        ]
+    },
+    {
+        id: "emmett",
+        title: "Emmett",
+        type: "open-source hover board",
+        year: "2016",
+        summary: "This was my effort to create a DIY one-wheel, self-balancing, electric skateboard. As the project progressed it became obvious this should be open-sourced. I was able to achieve decent accelerometer control and dealt with battery management, but got stuck handling the throttles of brushless electric motor controllers. I'd love to reboot this someday.",
+        links: [
+            { text: "Blog", url: "https://openemmett.tumblr.com/" },
+            { text: "Instructions wiki", url: "https://github.com/doublejosh/emmett/wiki" }
         ]
     },
     {
