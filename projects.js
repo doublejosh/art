@@ -8,9 +8,8 @@ const projects = [
         yearRange: "2024–present",
         summary: "Giant digital clock with 7-segment displays made from whiskey bottles. The ends of rectangular bottles make up the pieces of this jumbo very-lo-res \"screen.\"",
         links: [
-            { text: "Prototype", url: "https://www.instagram.com/reel/C2JPbp2xCbY/" },
             { text: "Full-scale draft", url: "https://www.dropbox.com/scl/fi/e0usvywct9gnfwn3p9oga/2024-04-11-19.51.06.mov?rlkey=56707ki9c2csljepkwb06r2f1&st=r7sqivl0&dl=0" },
-            { text: "In-progress", url: "#" }
+            { text: "Prototype video on IG", url: "https://www.instagram.com/p/C2JPbp2xCbY4JZXmIlpwT1ElLkkU41dVV2iL_A0/" },
         ]
     },
     {
