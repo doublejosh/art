@@ -20,7 +20,7 @@ const projects = [
         yearRange: "2023–present",
         summary: "Stickers created by running surveys on hundreds of brainstormed phrases.",
         links: [
-            { text: "Website", url: "https://bumperclub.popagenda.org/" }
+            { text: "Website", url: "https://bumperclub.art/" }
         ]
     },
     {
