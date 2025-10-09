@@ -264,13 +264,6 @@ const projects = [
         ]
     },
     {
-        id: "interlocked-earings",
-        title: "Interlocked Earings",
-        type: "jewelery",
-        year: "2015",
-        summary: "3D-printed 20-sided geometric figures interlocked into hanging earrings."
-    },
-    {
         id: "summer-rain",
         title: "Summer Rain",
         type: "smart fountain",
