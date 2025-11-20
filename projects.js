@@ -13,27 +13,21 @@ const projects = [
         ]
     },
     {
-        id: "bumper-sticker-club",
-        title: "Bumper Sticker Club",
-        type: "survey-driven sticker project",
-        year: "2023",
-        yearRange: "2023–present",
-        summary: "Stickers created by running surveys on hundreds of brainstormed phrases.",
-        links: [
-            { text: "Website", url: "https://bumperclub.art/" }
-        ]
-    },
-    {
         id: "posters-future",
         title: "City of the Future",
         type: "posters and signage",
         year: "2024",
         yearRange: "2023",
         summary: "Part of an immersive walk-through called City of the Future at the Teal Building on Capitol Hill, these posters and lightboxes helped draw guests into the future world of the exhibit. Pieces included advertisements and propaganda from businesses and city government. The work explored classism, utopia/dystopia, and how the future will affect our daily lives.",
+        media: {
+            images: [
+                "media/posters-future/2023-05-29 18.37.57.jpg",
+                "media/posters-future/2023-06-01 15.57.11.jpg"
+            ],
+            videos: []
+        },
         links: [
             { text: "Promo Posters", url: "https://www.instagram.com/p/Cs48Z7Zx4Ez/" },
-            { text: "Seattle Transit", url: "https://www.dropbox.com/scl/fi/kf20zgwuiefch2j00mlmd/2023-05-29-18.37.57.jpg?rlkey=hvpw8h3ubihh2yt8fvrm285d7&st=sqmnoza2&dl=0" },
-            { text: "Light box #1", url: "https://www.dropbox.com/scl/fi/zndnlakxn898w8bmg10hq/2023-06-01-15.57.11.jpg?rlkey=ssgp1wxcfvm5ogxfrds2g528p&st=gfcdicxd&dl=0" },
             { text: "TramaDroidAll", url: "https://www.instagram.com/p/Cs477UFrXnb/" },
             { text: "CryoNap", url: "https://www.instagram.com/p/CtA3o6grCFh/" },
             { text: "Oxygen-- Don't run out.", url: "https://www.instagram.com/p/CtORiQROmlI/" },
@@ -58,9 +52,12 @@ const projects = [
         type: "Topography in resin",
         year: "2023",
         summary: "Resin and wood sculpture of the Puget Sound topography, including the San Juan Islands and Hood Canal.",
-        links: [
-            { text: "Photo", url: "https://www.dropbox.com/scl/fi/ml7c4a15mfp15me28teju/2023-04-14-00.13.50-1.jpg?rlkey=2gjwdys0lpx1fvli41uv44ydt&st=zl1rpmww&dl=0" }
-        ]
+        media: {
+            images: [
+                "media/puget-sound/2023-04-14 00.13.50-1.jpg"
+            ],
+            videos: []
+        }
     },
     {
         id: "electric-sheep",
@@ -127,8 +124,14 @@ const projects = [
         type: "arcade machine",
         year: "2020",
         summary: "Arcade-style slot machine interface with web backend to measure interactions.",
+        media: {
+            images: [
+                "media/crystal-experiment/2019-12-13 00.00.57.jpg",
+                "media/crystal-experiment/2025-11-19 9.44.22.png"
+            ],
+            videos: []
+        },
         links: [
-            { text: "Photo", url: "https://www.dropbox.com/scl/fi/fgtod0hp2r1e3zekm1tuo/2019-12-13-00.00.57.jpg?rlkey=7vq2hilzhhb7jbou82f4acyme&st=l2n9p3ii&dl=0" },
             { text: "Series", url: "https://doublejosh.com/post/677646062958346240/fortune-teller-series-and-the-crystal-prediction" },
             { text: "Results site", url: "https://crystal-experiment.web.app/"}
         ]
@@ -139,11 +142,16 @@ const projects = [
         type: "Animated panel series",
         year: "2020",
         summary: "Backlit coroplast panels to simulate servers racks and data center screens.",
+        media: {
+            images: [
+                "media/panels-of-futurescape/2023-05-29 18.37.57.jpg",
+                "media/panels-of-futurescape/2023-06-01 15.57.11.jpg"
+            ],
+            videos: []
+        },
         links : [
             { text: "Video", url: "hhttps://www.dropbox.com/scl/fi/7e2jzxwo496cjwvg3zpgz/2018-07-02-22.15.37.mov?rlkey=86p2x052aq1x8bwq0gogt4dof&st=ce9b5bqw&dl=0" },
             { text: "Dual display", url: "https://www.dropbox.com/scl/fi/ccwxzpdkndrkrfcxu9svc/2018-07-11-21.44.07.mov?rlkey=zigx52pwlmhd94y714f4364rw&st=e52bvjkt&dl=0" },
-            { text: "Tech idols", url: "https://www.dropbox.com/scl/fi/3hyvnonlgx475mbd84aqr/2018-06-27-20.35.23-1.jpg?rlkey=64f7zm1zvgc2nj64h8q4dcakn&st=k17gyom9&dl=0" },
-            { text: "Static opposites", url: "https://www.dropbox.com/scl/fi/ua1880bk2f4r0548p38or/2022-03-15-22.24.10.jpg?rlkey=a4mtu1sseopiqsrslecu3lkdf&st=cjyw34wu&dl=0" },
         ]
     },
     {
@@ -154,19 +162,37 @@ const projects = [
         summary: "Interactive lighting installation with responsive addressable light strands elements."
     },
     {
+        id: "mt-adams",
+        title: "Mt Adams",
+        type: "diorama lamp",
+        year: "2019",
+        summary: "Nite light wall shadow sunrise/sunset diorama lamp.",
+        media: {
+            images: [
+                "media/mt-adams/2019-12-23 02.06.50.jpg"
+            ],
+            videos: []
+        }
+    },
+    {
         id: "pop-agenda",
         title: "POPAGENDA",
         type: "mobile popups",
         year: "2019",
         yearRange: "2019–present",
         summary: "This mini food-truck serves snacks and mobile music performance. Staff wear period costumes (hats, bow ties, aprons) while in character giving away snacks. Puppets are involved. This piece has been to numerous PNW outdoor events.",
+        media: {
+            images: [
+                "media/pop-agenda/popagenda-critial-2025.JPG",
+                "media/pop-agenda/2022-04-14 18.58.49.jpg",
+                "media/pop-agenda/2023-10-08 02.09.29.jpg",
+                "media/pop-agenda/2024-10-31 00.17.40.jpg"
+            ],
+            videos: []
+        },
         links: [
-            { text: "Recent photo", url: "https://www.dropbox.com/scl/fi/m8li80o4q061d0sz0tnhf/ACDBCF90-0F67-4551-8FCA-1AD4C5C23E12_1_105_c.JPG?rlkey=w6npli80mxvicd7wosvyynpgh&dl=0" },
             { text: "Instagram", url: "https://www.instagram.com/the_pop_agenda/" },
-            { text: "Seattle Center", url: "https://www.dropbox.com/scl/fi/5gmyd9drgistopzgnsco5/2023-10-08-02.09.29.jpg?rlkey=5z6a0cggaq8agmo2a3o4ggc14&st=od43iccp&dl=0" },
             { text: "popagenda.org", url: "https://popagenda.org/" },
-            { text: "Stamps", url: "https://www.dropbox.com/scl/fi/fyojepyhm621n61r02pdc/2022-04-14-18.58.49.jpg?rlkey=2n50kaiwafgbx1k9hqykbxz45&st=1dhnx6zp&dl=0" },
-            { text: "Bag stamping", url: "https://www.dropbox.com/scl/fi/hkjvox27tq1zebjjsgqp1/2024-10-31-00.17.40.jpg?rlkey=cf86ju6d9txp8rnggmam37rlp&st=vtq1pdqj&dl=0" },
             { text: "Early ideas", url: "https://doublejosh.com/post/184371658853/popagenda" },
         ]
     },
@@ -212,8 +238,15 @@ const projects = [
         type: "video",
         year: "2018",
         summary: "Programmable lights with large effect using cheap materials (conduit, coroplast, foam). Pieces were assembled at various events near Seattle.",
+        media: {
+            images: [
+                "media/upgrade-node/2018-12-09 18.30.26.jpg"
+            ],
+            videos: [
+                "media/upgrade-node/2018-12-14 00.09.44.mov"
+            ]
+        },
         links: [
-            { text: "Sign with reactive EQ", url: "https://www.dropbox.com/scl/fi/upgcqqkr9w5fsch6q56ri/2018-12-14-00.09.44.mov?rlkey=c5guafyolg0uvi8voffriy5m1&st=8as6npui&dl=0" },
             { text: "Panels video", url: "https://www.dropbox.com/scl/fi/ccwxzpdkndrkrfcxu9svc/2018-07-11-21.44.07.mov?rlkey=zigx52pwlmhd94y714f4364rw&st=niaza35p&dl=0" },
             { text: "Instagram", url: "https://www.instagram.com/p/Bp2jY2slYzIHhpBcR2msMvHyklOBqPwUsDd-Nw0/" }
         ]

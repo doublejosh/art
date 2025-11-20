@@ -368,6 +368,82 @@
             word-break: break-all;
         }
 
+        /* Media Gallery Styles */
+        .media-gallery-section {
+            margin-bottom: 30px;
+        }
+
+        .media-gallery-section h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #000000;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .media-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .media-thumbnail {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            transition: all 0.2s ease;
+            aspect-ratio: 4/3;
+        }
+
+        .media-thumbnail:hover {
+            border-color: #2c5aa0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .media-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .media-video-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .media-video-link {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 12px;
+            text-decoration: none;
+            color: #2c5aa0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .media-video-link:hover {
+            background: #e9ecef;
+            border-color: #2c5aa0;
+            transform: translateY(-1px);
+        }
+
+        .media-video-link::before {
+            content: "▶";
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
         @media (max-width: 768px) {
             .timeline::before {
                 left: 30px;
@@ -405,6 +481,10 @@
             .project-links-grid {
                 grid-template-columns: 1fr !important;
             }
+
+            .media-gallery-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -436,8 +516,14 @@
                     <p class="overlay-summary" id="overlaySummary"></p>
                 </div>
                 <div class="overlay-body">
+                    <!-- Media Gallery Section -->
+                    <div class="media-gallery-section" id="overlayMediaSection" style="display: none;">
+                        <div class="media-gallery-grid" id="overlayMediaGrid"></div>
+                        <div class="media-video-links" id="overlayVideoLinks"></div>
+                    </div>
+
+                    <!-- External Links Section -->
                     <div class="project-links-section" id="overlayLinksSection">
-                        <h3>Project Links & Media</h3>
                         <div class="project-links-grid" id="overlayLinksGrid">
                         </div>
                     </div>
@@ -578,46 +664,88 @@
             const type = document.getElementById('overlayType');
             const year = document.getElementById('overlayYear');
             const summary = document.getElementById('overlaySummary');
+            const mediaSection = document.getElementById('overlayMediaSection');
+            const mediaGrid = document.getElementById('overlayMediaGrid');
+            const videoLinks = document.getElementById('overlayVideoLinks');
             const linksSection = document.getElementById('overlayLinksSection');
             const linksGrid = document.getElementById('overlayLinksGrid');
-            
+
             // Populate content
             title.textContent = project.title;
             type.textContent = project.type;
             year.textContent = project.yearRange || project.year;
             summary.textContent = project.summary || 'No description available.';
-            
+
+            // Clear and populate media gallery
+            mediaGrid.innerHTML = '';
+            videoLinks.innerHTML = '';
+
+            if (project.media && (project.media.images.length > 0 || project.media.videos.length > 0)) {
+                mediaSection.style.display = 'block';
+
+                // Render image thumbnails
+                project.media.images.forEach(imagePath => {
+                    const thumbnail = document.createElement('a');
+                    thumbnail.className = 'media-thumbnail';
+                    thumbnail.href = imagePath;
+                    thumbnail.target = '_blank';
+
+                    const img = document.createElement('img');
+                    img.src = imagePath;
+                    img.alt = 'Project media';
+                    img.loading = 'lazy';
+
+                    thumbnail.appendChild(img);
+                    mediaGrid.appendChild(thumbnail);
+                });
+
+                // Render video links
+                project.media.videos.forEach(videoPath => {
+                    const videoLink = document.createElement('a');
+                    videoLink.className = 'media-video-link';
+                    videoLink.href = videoPath;
+                    videoLink.target = '_blank';
+
+                    const fileName = videoPath.split('/').pop();
+                    videoLink.textContent = fileName;
+
+                    videoLinks.appendChild(videoLink);
+                });
+            } else {
+                mediaSection.style.display = 'none';
+            }
+
             // Clear and populate links grid
             linksGrid.innerHTML = '';
-            
+
             if (project.links && project.links.length > 0) {
                 linksSection.style.display = 'block';
-                
+
                 project.links.forEach(link => {
                     const linkItem = document.createElement('a');
                     linkItem.className = 'project-link-item';
                     linkItem.href = link.url;
                     linkItem.target = '_blank';
-                    
+
                     // Link title
                     const linkTitle = document.createElement('div');
                     linkTitle.className = 'link-title';
                     linkTitle.textContent = link.text;
-                    
+
                     // Link URL
                     const linkUrl = document.createElement('div');
                     linkUrl.className = 'link-url';
                     linkUrl.textContent = getDomain(link.url);
-                    
+
                     linkItem.appendChild(linkTitle);
                     linkItem.appendChild(linkUrl);
-                    
+
                     linksGrid.appendChild(linkItem);
                 });
             } else {
                 linksSection.style.display = 'none';
             }
-            
+
             // Show overlay
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
