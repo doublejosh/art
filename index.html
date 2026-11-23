@@ -725,8 +725,11 @@
                 summary.className = project.noContent ? 'project-summary no-content' : 'project-summary';
                 
                 let summaryText = project.summary || 'No description available.';
-                if (summaryText.length > 110) {
-                    summaryText = summaryText.substring(0, 110).trim() + '...';
+                // Truncate long summaries at a word boundary
+                const maxLength = 280;
+                if (summaryText.length > maxLength) {
+                    const cut = summaryText.substring(0, maxLength);
+                    summaryText = cut.substring(0, cut.lastIndexOf(' ')).replace(/[,;:.\s]+$/, '') + '…';
                 }
                 summary.textContent = summaryText;
                 
