@@ -105,6 +105,63 @@
             top: 8px;
         }
 
+        /* Tech: hollow dot. Art + tech: filled dot with a ring. */
+        .timeline-item.cat-tech .timeline-dot {
+            background: #ffffff;
+            border: 1.5px solid #2c5aa0;
+        }
+
+        .timeline-item.cat-art-tech .timeline-dot {
+            background: #2c5aa0;
+            box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #2c5aa0;
+        }
+
+        /* Tech pill, shown only on tech-only projects */
+        .project-category {
+            display: inline-block;
+            vertical-align: 1px;
+            background: #2c5aa0;
+            border: 1.5px solid #2c5aa0;
+            color: #ffffff;
+            font-size: 0.68rem;
+            font-weight: 600;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            margin-left: 10px;
+        }
+
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .category-filter button {
+            background: none;
+            border: 1px solid #e0e0e0;
+            border-radius: 999px;
+            padding: 4px 14px;
+            font: inherit;
+            font-size: 0.85rem;
+            color: #666666;
+            cursor: pointer;
+        }
+
+        .category-filter button:hover {
+            border-color: #2c5aa0;
+            color: #2c5aa0;
+        }
+
+        .category-filter button.active {
+            background: #000000;
+            border-color: #000000;
+            color: #ffffff;
+        }
+
         .project-card {
             background: #ffffff;
             border: none;
@@ -500,6 +557,12 @@
             </p>
         </header>
 
+        <nav class="category-filter" id="categoryFilter">
+            <button data-filter="all">All</button>
+            <button data-filter="art">Art</button>
+            <button data-filter="tech">Tech</button>
+        </nav>
+
         <div class="timeline" id="timeline">
         </div>
 
@@ -567,15 +630,48 @@
             }
         }
 
+        // Categories default to art when not specified
+        function getCategories(project) {
+            return project.categories && project.categories.length ? project.categories : ['art'];
+        }
+
+        function getCategoryClass(project) {
+            const cats = getCategories(project);
+            if (cats.includes('art') && cats.includes('tech')) return 'cat-art-tech';
+            return cats.includes('tech') ? 'cat-tech' : 'cat-art';
+        }
+
+        function getCategoryLabel(project) {
+            return getCategories(project).join(' + ');
+        }
+
+        // Current filter comes from the URL hash (#art, #tech), default all
+        function getFilter() {
+            const hash = window.location.hash.replace('#', '');
+            return hash === 'art' || hash === 'tech' ? hash : 'all';
+        }
+
+        function updateFilterButtons() {
+            const filter = getFilter();
+            document.querySelectorAll('#categoryFilter button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.filter === filter);
+            });
+        }
+
         // Render projects function
         function renderProjects() {
             const timeline = document.getElementById('timeline');
-            
+            const filter = getFilter();
+
             // Clear existing timeline content
             timeline.innerHTML = '';
-            
+
+            const visibleProjects = filter === 'all'
+                ? projects
+                : projects.filter(p => getCategories(p).includes(filter));
+
             // Sort projects to put active (present) projects first
-            const sortedProjects = [...projects].sort((a, b) => {
+            const sortedProjects = [...visibleProjects].sort((a, b) => {
                 const aIsActive = a.yearRange && a.yearRange.includes('present');
                 const bIsActive = b.yearRange && b.yearRange.includes('present');
                 
@@ -590,7 +686,7 @@
             
             sortedProjects.forEach(project => {
                 const timelineItem = document.createElement('div');
-                timelineItem.className = 'timeline-item';
+                timelineItem.className = 'timeline-item ' + getCategoryClass(project);
                 
                 // Create timeline dot
                 const dot = document.createElement('div');
@@ -605,7 +701,15 @@
                 const year = document.createElement('div');
                 year.className = 'project-year';
                 year.textContent = project.yearRange || project.year;
-                
+
+                // Tech pill, only for tech-only projects (the outliers)
+                if (getCategoryClass(project) === 'cat-tech') {
+                    const category = document.createElement('span');
+                    category.className = 'project-category';
+                    category.textContent = 'tech';
+                    year.appendChild(category);
+                }
+
                 // Project title
                 const title = document.createElement('h2');
                 title.className = 'project-title';
@@ -673,7 +777,7 @@
             // Populate content
             title.textContent = project.title;
             type.textContent = project.type;
-            year.textContent = project.yearRange || project.year;
+            year.textContent = (project.yearRange || project.year) + ' · ' + getCategoryLabel(project);
             summary.textContent = project.summary || 'No description available.';
 
             // Clear and populate media gallery
@@ -761,7 +865,22 @@
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             renderProjects();
-            
+            updateFilterButtons();
+
+            // Category filter
+            document.querySelectorAll('#categoryFilter button').forEach(btn => {
+                btn.onclick = () => {
+                    const filter = btn.dataset.filter;
+                    history.replaceState(null, '', filter === 'all' ? window.location.pathname : '#' + filter);
+                    renderProjects();
+                    updateFilterButtons();
+                };
+            });
+            window.addEventListener('hashchange', () => {
+                renderProjects();
+                updateFilterButtons();
+            });
+
             // Set up overlay close handlers
             document.getElementById('overlayClose').onclick = closeProjectOverlay;
             document.getElementById('projectOverlay').onclick = function(e) {

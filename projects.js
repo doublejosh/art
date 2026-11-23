@@ -1,5 +1,103 @@
 // Project data configuration for Josh Lind Art Portfolio
+// categories: ["art"], ["tech"], or ["art", "tech"]. Omitted means ["art"].
 const projects = [
+    {
+        id: "sim-gallery",
+        title: "Sim Gallery",
+        type: "AI artist colony simulation",
+        year: "2026",
+        yearRange: "2026–present",
+        categories: ["art", "tech"],
+        summary: "A simulated artist colony where AI-driven artists pitch, join, and abandon art projects. The pieces they finish end up in a gallery you can browse.",
+        links: [
+            { text: "sim.gallery", url: "https://sim.gallery/" }
+        ]
+    },
+    {
+        id: "camano-fm",
+        title: "Camano FM",
+        type: "community internet radio",
+        year: "2026",
+        yearRange: "2026–present",
+        categories: ["tech"],
+        summary: "Community internet radio for Camano Island, streaming music 24/7 with volunteer DJs, listener playlists, and local PSAs.",
+        links: [
+            { text: "camano.fm", url: "https://camano.fm/" }
+        ]
+    },
+    {
+        id: "voicemail",
+        title: "Voice Mail",
+        type: "audio message kiosk",
+        year: "2026",
+        categories: ["art", "tech"],
+        summary: "A browser-based kiosk: press and hold to record a voice message, then scan the QR code on a printed receipt to play it back. Includes an interpret mode.",
+        links: [
+            { text: "Live kiosk", url: "https://doublejosh.github.io/VoiceMail/" },
+            { text: "GitHub", url: "https://github.com/doublejosh/VoiceMail" }
+        ]
+    },
+    {
+        id: "friendsover",
+        title: "FriendsOver",
+        type: "friend visit scheduler",
+        year: "2026",
+        yearRange: "2026–present",
+        categories: ["tech"],
+        summary: "A mobile-first web app to go stay with friends more often. Hosts publish their weekly availability and guests request dates by text message, with no guest accounts needed.",
+        links: [
+            { text: "friendsover.to", url: "https://friendsover.to/" }
+        ]
+    },
+    {
+        id: "ynik",
+        title: "Yeah No I Know",
+        type: "AI agent platform",
+        year: "2025",
+        yearRange: "2025–present",
+        categories: ["tech"],
+        summary: "A no-code platform for building custom AI chat agents with a set tone, goals, and personality. AI scaffolding with an agenda.",
+        links: [
+            { text: "yeahnoiknow.com", url: "https://yeahnoiknow.com/" }
+        ]
+    },
+    {
+        id: "fortune-teller",
+        title: "Fortune Teller",
+        type: "web + Arduino fortune teller",
+        year: "2020",
+        yearRange: "2020–present",
+        categories: ["art", "tech"],
+        summary: "An ongoing fortune-telling project: a web app that asks yes/no questions and deals out fortunes, plus Arduino code for a coin-triggered fortune machine with an LCD screen.",
+        links: [
+            { text: "Web app", url: "https://fortune.yeahnoiknow.com/" },
+            { text: "Arduino starter", url: "https://github.com/doublejosh/FortuneExample" }
+        ]
+    },
+    {
+        id: "eyes",
+        title: "Eyes",
+        type: "animated eyes toy",
+        year: "2025",
+        categories: ["art", "tech"],
+        summary: "Interactive animated eyes with keyboard controls for eye sets, behaviors, scripted sequences, tears, and eye tracking.",
+        links: [
+            { text: "eyes.doublejosh.com", url: "https://eyes.doublejosh.com/" },
+            { text: "GitHub", url: "https://github.com/doublejosh/Eyes" }
+        ]
+    },
+    {
+        id: "vibes",
+        title: "Vibes",
+        type: "vibe-coding presentation",
+        year: "2025",
+        categories: ["tech"],
+        summary: "A talk on vibe-coding: 20 slides with sample prompts, a project README, and human-written takeaways.",
+        links: [
+            { text: "Slides", url: "https://vibes.doublejosh.com/" },
+            { text: "GitHub", url: "https://github.com/doublejosh/vibes" }
+        ]
+    },
     {
         id: "whiskey-oclock",
         title: "Whiskey O'Clock",
@@ -133,7 +231,7 @@ const projects = [
         },
         links: [
             { text: "Series", url: "https://doublejosh.com/post/677646062958346240/fortune-teller-series-and-the-crystal-prediction" },
-            { text: "Results site", url: "https://crystal-experiment.web.app/"}
+            { text: "Results site", url: "https://crystal-experiment.web.app/" }
         ]
     },
     {
@@ -149,7 +247,7 @@ const projects = [
             ],
             videos: []
         },
-        links : [
+        links: [
             { text: "Video", url: "hhttps://www.dropbox.com/scl/fi/7e2jzxwo496cjwvg3zpgz/2018-07-02-22.15.37.mov?rlkey=86p2x052aq1x8bwq0gogt4dof&st=ce9b5bqw&dl=0" },
             { text: "Dual display", url: "https://www.dropbox.com/scl/fi/ccwxzpdkndrkrfcxu9svc/2018-07-11-21.44.07.mov?rlkey=zigx52pwlmhd94y714f4364rw&st=e52bvjkt&dl=0" },
         ]

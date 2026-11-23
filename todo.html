@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doublejosh :: project status</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 6px;
+        }
+
+        h1 a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        .legend {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .legend span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        thead th {
+            text-align: left;
+            padding: 8px 12px;
+            background: #f4f4f4;
+            border-bottom: 2px solid #ddd;
+            font-weight: 600;
+            white-space: nowrap;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            font-size: 0.75rem;
+        }
+
+        tbody tr:hover {
+            background: #fafafa;
+        }
+
+        tbody tr + tr {
+            border-top: 1px solid #eee;
+        }
+
+        td {
+            padding: 8px 12px;
+            vertical-align: middle;
+        }
+
+        td.title {
+            font-weight: 500;
+        }
+
+        td.year {
+            color: #999;
+            white-space: nowrap;
+        }
+
+        td.type {
+            color: #666;
+            font-size: 0.8rem;
+            max-width: 180px;
+        }
+
+        .status-cell {
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .dot-yes   { background: #3a3; }
+        .dot-some  { background: #ca0; }
+        .dot-no    { background: #ddd; }
+
+        .count {
+            font-size: 0.75rem;
+            color: #888;
+            margin-left: 4px;
+        }
+
+        .summary-preview {
+            color: #666;
+            font-size: 0.78rem;
+            max-width: 300px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .links-cell {
+            position: relative;
+        }
+
+        .links-tooltip {
+            display: none;
+            position: absolute;
+            z-index: 10;
+            left: 50%;
+            top: calc(100% + 4px);
+            transform: translateX(-50%);
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            padding: 8px 10px;
+            min-width: 200px;
+            max-width: 320px;
+            white-space: normal;
+        }
+
+        .links-cell:hover .links-tooltip {
+            display: block;
+        }
+
+        .links-tooltip a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.78rem;
+            padding: 2px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .links-tooltip a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .links-tooltip a + a {
+            border-top: 1px solid #f0f0f0;
+            margin-top: 2px;
+            padding-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="index.html">-✁- doublejosh --</a> &rsaquo; project status</h1>
+    <p class="subtitle">Media and info completeness across all projects.</p>
+
+    <div class="legend">
+        <span><span class="dot dot-yes"></span> has content</span>
+        <span><span class="dot dot-some"></span> partial</span>
+        <span><span class="dot dot-no"></span> missing</span>
+    </div>
+
+    <table id="projectTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Type</th>
+                <th>Images</th>
+                <th>Video</th>
+                <th>Links</th>
+                <th>Summary</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script src="projects.js"></script>
+    <script>
+        function dot(cls, count) {
+            const countStr = count > 0 ? `<span class="count">${count}</span>` : '';
+            return `<span class="dot ${cls}"></span>${countStr}`;
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+
+            projects.forEach(p => {
+                const images  = p.media?.images?.length  || 0;
+                const videos  = p.media?.videos?.length  || 0;
+                const links   = p.links?.length           || 0;
+                const summary = (p.summary || '').trim();
+
+                const imgDot  = images  > 0 ? dot('dot-yes',  images)  : dot('dot-no',  0);
+                const vidDot  = videos  > 0 ? dot('dot-yes',  videos)  : dot('dot-no',  0);
+                const lnkDot  = links   > 0 ? dot('dot-yes',  links)   : dot('dot-no',  0);
+                const lnkTooltip = links > 0
+                    ? `<div class="links-tooltip">${p.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.text}</a>`).join('')}</div>`
+                    : '';
+                const sumDot  = summary.length > 20 ? dot('dot-yes', 0)
+                              : summary.length > 0  ? dot('dot-some', 0)
+                              :                       dot('dot-no',  0);
+
+                const summaryText = summary.length > 60
+                    ? summary.substring(0, 60) + '…'
+                    : summary || '—';
+
+                const notes = p.noContent ? 'no content' : '';
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="title">${p.title}</td>
+                    <td class="year">${p.yearRange || p.year}</td>
+                    <td class="type">${p.type}</td>
+                    <td class="status-cell">${imgDot}</td>
+                    <td class="status-cell">${vidDot}</td>
+                    <td class="status-cell links-cell">${lnkDot}${lnkTooltip}</td>
+                    <td class="status-cell">${sumDot}</td>
+                    <td class="summary-preview">${notes || summaryText}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderTable);
+    </script>
+</body>
+</html>
