@@ -8,7 +8,7 @@ const projects = [
         year: "2026",
         yearRange: "2026–present",
         categories: ["art", "tech"],
-        summary: "A simulated artist colony where AI-driven artists pitch, join, and abandon art projects. The pieces they finish end up in a gallery you can browse.",
+        summary: "A simulated artist colony where AI-driven moody artists pitch, join, and abandon art projects. The pieces they finish end up in a gallery you can browse.",
         links: [
             { text: "sim.gallery", url: "https://sim.gallery/" }
         ]
@@ -20,7 +20,7 @@ const projects = [
         year: "2026",
         yearRange: "2026–present",
         categories: ["tech"],
-        summary: "Community internet radio for Camano Island, streaming music 24/7 with volunteer DJs, listener playlists, and local PSAs.",
+        summary: "Community internet radio for Camano Island, streaming music 24/7 with listener playlists, local PSAs and event popups.",
         links: [
             { text: "camano.fm", url: "https://camano.fm/" }
         ]
@@ -31,7 +31,7 @@ const projects = [
         type: "audio message kiosk",
         year: "2026",
         categories: ["art", "tech"],
-        summary: "A browser-based kiosk: press and hold to record a voice message, then scan the QR code on a printed receipt to play it back. Includes an interpret mode.",
+        summary: "Record a voice message onto a printed QR code. Then play it back on the second kiosk. Audio is stored on page.",
         links: [
             { text: "Live kiosk", url: "https://doublejosh.github.io/VoiceMail/" },
             { text: "GitHub", url: "https://github.com/doublejosh/VoiceMail" }
@@ -44,7 +44,7 @@ const projects = [
         year: "2026",
         yearRange: "2026–present",
         categories: ["tech"],
-        summary: "A mobile-first web app to go stay with friends more often. Hosts publish their weekly availability and guests request dates by text message, with no guest accounts needed.",
+        summary: "Mobile app to go stay with friends more often. Publish your weekly availability or link a live calendar. Guests request dates by text message, no account needed.",
         links: [
             { text: "friendsover.to", url: "https://friendsover.to/" }
         ]
@@ -56,7 +56,7 @@ const projects = [
         year: "2025",
         yearRange: "2025–present",
         categories: ["tech"],
-        summary: "A no-code platform for building custom AI chat agents with a set tone, goals, and personality. AI scaffolding with an agenda.",
+        summary: "Platform for building custom AI chat agents with a set tone, goals, and personality. AI scaffolding with an agenda.",
         links: [
             { text: "yeahnoiknow.com", url: "https://yeahnoiknow.com/" }
         ]
